@@ -9,7 +9,7 @@ Bill, the cluster admin, wants to deploy a helm chart from `OCI` registry in nam
 First, Bill creates a template:
 
 ```yaml
-apiVersion: tenantoperator.stakater.com/v1alpha1
+apiVersion: templates.stakater.com/v1alpha1
 kind: Template
 metadata:
   name: chart-deploy
@@ -34,7 +34,7 @@ resources:
 Once the template has been created, Bill makes a `ClusterTemplateInstance` referring to the `Template` he wants to deploy with `MatchLabels`:
 
 ```yaml
-apiVersion: tenantoperator.stakater.com/v1alpha1
+apiVersion: templates.stakater.com/v1alpha1
 kind: ClusterTemplateInstance
 metadata:
   name: chart-deploy
@@ -60,7 +60,7 @@ Bill, the cluster admin, wants to deploy a helm chart from `HTTPS` registry in n
 First, Bill creates a template:
 
 ```yaml
-apiVersion: tenantoperator.stakater.com/v1alpha1
+apiVersion: templates.stakater.com/v1alpha1
 kind: Template
 metadata:
   name: chart-deploy
@@ -85,7 +85,7 @@ resources:
 Once the template has been created, Bill makes a `ClusterTemplateInstance` referring to the `Template` he wants to deploy with `MatchLabels`:
 
 ```yaml
-apiVersion: tenantoperator.stakater.com/v1alpha1
+apiVersion: templates.stakater.com/v1alpha1
 kind: ClusterTemplateInstance
 metadata:
   name: chart-deploy

@@ -3,7 +3,7 @@
 Namespace scoped resource:
 
 ```yaml
-apiVersion: tenantoperator.stakater.com/v1alpha1
+apiVersion: templates.stakater.com/v1alpha1
 kind: TemplateInstance
 metadata:
   name: networkpolicy

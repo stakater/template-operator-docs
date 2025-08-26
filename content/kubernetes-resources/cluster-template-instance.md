@@ -3,7 +3,7 @@
 Cluster scoped resource:
 
 ```yaml
-apiVersion: tenantoperator.stakater.com/v1alpha1
+apiVersion: templates.stakater.com/v1alpha1
 kind: ClusterTemplateInstance
 metadata:
   name: namespace-parameterized-restrictions-tgi

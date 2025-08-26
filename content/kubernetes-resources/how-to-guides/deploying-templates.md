@@ -12,7 +12,7 @@ Bill, the cluster admin, wants to deploy a docker pull secret in namespaces wher
 First, Bill creates a template:
 
 ```yaml
-apiVersion: tenantoperator.stakater.com/v1alpha1
+apiVersion: templates.stakater.com/v1alpha1
 kind: Template
 metadata:
   name: docker-secret
@@ -30,7 +30,7 @@ resources:
 Once the template has been created, Bill makes a `ClusterTemplateInstance` referring to the `Template` he wants to deploy with `MatchLabels`:
 
 ```yaml
-apiVersion: tenantoperator.stakater.com/v1alpha1
+apiVersion: templates.stakater.com/v1alpha1
 kind: ClusterTemplateInstance
 metadata:
   name: docker-secret-group-instance
@@ -61,7 +61,7 @@ docker-secret    Active   2m
 It can be done by using the `matchExpressions` field, dividing the tenant label in key and values.
 
 ```yaml
-apiVersion: tenantoperator.stakater.com/v1alpha1
+apiVersion: templates.stakater.com/v1alpha1
 kind: ClusterTemplateInstance
 metadata:
   name: docker-secret-group-instance
@@ -82,7 +82,7 @@ spec:
 This can also be done by using the `matchExpressions` field, using just the tenant label key `stakater.com/tenant`.
 
 ```yaml
-apiVersion: tenantoperator.stakater.com/v1alpha1
+apiVersion: templates.stakater.com/v1alpha1
 kind: ClusterTemplateInstance
 metadata:
   name: docker-secret-group-instance
@@ -102,7 +102,7 @@ Anna wants to deploy a docker pull secret in her namespace.
 First Anna asks Bill, the cluster admin, to create a template of the secret for her:
 
 ```yaml
-apiVersion: tenantoperator.stakater.com/v1alpha1
+apiVersion: templates.stakater.com/v1alpha1
 kind: Template
 metadata:
   name: docker-pull-secret
@@ -120,7 +120,7 @@ resources:
 Once the template has been created, Anna creates a `TemplateInstance` in her namespace referring to the `Template` she wants to deploy:
 
 ```yaml
-apiVersion: tenantoperator.stakater.com/v1alpha1
+apiVersion: templates.stakater.com/v1alpha1
 kind: TemplateInstance
 metadata:
   name: docker-pull-secret-instance
@@ -145,7 +145,7 @@ Anna wants to deploy a LimitRange resource to certain namespaces.
 First Anna asks Bill, the cluster admin, to create template with parameters for LimitRange for her:
 
 ```yaml
-apiVersion: tenantoperator.stakater.com/v1alpha1
+apiVersion: templates.stakater.com/v1alpha1
 kind: Template
 metadata:
   name: namespace-parameterized-restrictions
@@ -178,7 +178,7 @@ resources:
 Afterward, Anna creates a `TemplateInstance` in her namespace referring to the `Template` she wants to deploy:
 
 ```yaml
-apiVersion: tenantoperator.stakater.com/v1alpha1
+apiVersion: templates.stakater.com/v1alpha1
 kind: TemplateInstance
 metadata:
   name: namespace-parameterized-restrictions-instance
@@ -196,7 +196,7 @@ parameters:
 If she wants to distribute the same Template over multiple namespaces, she can use `ClusterTemplateInstance`.
 
 ```yaml
-apiVersion: tenantoperator.stakater.com/v1alpha1
+apiVersion: templates.stakater.com/v1alpha1
 kind: ClusterTemplateInstance
 metadata:
   name: namespace-parameterized-restrictions-tgi

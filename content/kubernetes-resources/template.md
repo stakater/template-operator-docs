@@ -27,7 +27,7 @@ This approach uses raw Kubernetes manifests (YAML files) that specify resources 
 #### Example
 
 ```yaml
-apiVersion: tenantoperator.stakater.com/v1alpha1
+apiVersion: templates.stakater.com/v1alpha1
 kind: Template
 metadata:
   name: networkpolicy
@@ -90,7 +90,7 @@ This method integrates Helm charts into the template, allowing you to leverage H
 #### Example
 
 ```yaml
-apiVersion: tenantoperator.stakater.com/v1alpha1
+apiVersion: templates.stakater.com/v1alpha1
 kind: Template
 metadata:
   name: redis
@@ -156,7 +156,7 @@ This approach maps secrets and ConfigMaps from one tenant's namespace to another
 #### Example
 
 ```yaml
-apiVersion: tenantoperator.stakater.com/v1alpha1
+apiVersion: templates.stakater.com/v1alpha1
 kind: Template
 metadata:
   name: resource-mapping

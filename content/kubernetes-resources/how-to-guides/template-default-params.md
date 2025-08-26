@@ -1,7 +1,7 @@
 # Using Templates with Default Parameters
 
 ```yaml
-apiVersion: tenantoperator.stakater.com/v1alpha1
+apiVersion: templates.stakater.com/v1alpha1
 kind: Template
 metadata:
   name: namespace-parameterized-restrictions

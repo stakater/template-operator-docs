@@ -8,7 +8,7 @@ Manually creating secrets within different namespaces could lead to challenges, 
 - If we update the parent secret, they will have to update the secret in all descendant namespaces
 - This could be time-consuming, and a small mistake while creating or updating the secret could lead to unnecessary debugging
 
-With the help of Multi-Tenant Operator's Template feature we can make this secret distribution experience easy.
+With the help of Template Operator's Template feature we can make this secret distribution experience easy.
 
 ---
 
@@ -17,7 +17,7 @@ For example, to copy a Secret called `registry` which exists in the `example` to
 It will also push updates to the copied Secrets and keep the propagated secrets always sync and updated with parent namespaces.
 
 ```yaml
-apiVersion: tenantoperator.stakater.com/v1alpha1
+apiVersion: templates.stakater.com/v1alpha1
 kind: Template
 metadata:
   name: registry-secret
@@ -36,7 +36,7 @@ For propagating it on different namespaces dynamically will have to create anoth
 `ClusterTemplateInstance` will have `Template` and `matchLabel` mapping as shown below:
 
 ```yaml
-apiVersion: tenantoperator.stakater.com/v1alpha1
+apiVersion: templates.stakater.com/v1alpha1
 kind: ClusterTemplateInstance
 metadata:
   name: registry-secret-group-instance

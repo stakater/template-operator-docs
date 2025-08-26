@@ -5,7 +5,7 @@ Bill is a cluster admin who wants to map a `docker-pull-secret`, present in a `b
 First, Bill creates a template:
 
 ```yaml
-apiVersion: tenantoperator.stakater.com/v1alpha1
+apiVersion: templates.stakater.com/v1alpha1
 kind: Template
 metadata:
   name: docker-pull-secret
@@ -19,7 +19,7 @@ resources:
 Once the template has been created, Bill makes a `ClusterTemplateInstance` referring to the `Template` he wants to deploy with `MatchLabels`:
 
 ```yaml
-apiVersion: tenantoperator.stakater.com/v1alpha1
+apiVersion: templates.stakater.com/v1alpha1
 kind: ClusterTemplateInstance
 metadata:
   name: docker-secret-group-instance
@@ -50,7 +50,7 @@ Anna is a tenant owner who wants to map a `docker-pull-secret`, present in `blus
 First, Bill creates a template:
 
 ```yaml
-apiVersion: tenantoperator.stakater.com/v1alpha1
+apiVersion: templates.stakater.com/v1alpha1
 kind: Template
 metadata:
   name: docker-pull-secret
@@ -64,7 +64,7 @@ resources:
 Once the template has been created, Anna creates a `TemplateInstance` in `bluesky-anna-aurora-sandbox` namespace, referring to the `Template`.
 
 ```yaml
-apiVersion: tenantoperator.stakater.com/v1alpha1
+apiVersion: templates.stakater.com/v1alpha1
 kind: TemplateInstance
 metadata:
   name: docker-secret-instance

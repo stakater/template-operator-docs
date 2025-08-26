@@ -5,7 +5,7 @@ The ClusterTemplateInstance CR provides two types of resource sync for the resou
 For the given example, let's consider we want to apply the following template
 
 ```yaml
-apiVersion: tenantoperator.stakater.com/v1alpha1
+apiVersion: templates.stakater.com/v1alpha1
 kind: Template
 metadata:
   name: docker-secret
@@ -31,7 +31,7 @@ resources:
 And the following ClusterTemplateInstance is used to deploy these resources to namespaces having label `kind: build`
 
 ```yaml
-apiVersion: tenantoperator.stakater.com/v1alpha1
+apiVersion: templates.stakater.com/v1alpha1
 kind: ClusterTemplateInstance
 metadata:
   name: docker-secret-group-instance
@@ -58,7 +58,7 @@ As we can see, in our TGI, we have a field `spec.sync` which is set to `true`. T
 If the resources mentioned in `Template` CR conflict with another controller/operator, and you want ClusterTemplateInstance to not actively revert the resource updates, you can add the following label to the conflicting resource `multi-tenant-operator/ignore-resource-updates: ""`.
 
 ```yaml
-apiVersion: tenantoperator.stakater.com/v1alpha1
+apiVersion: templates.stakater.com/v1alpha1
 kind: Template
 metadata:
   name: docker-secret

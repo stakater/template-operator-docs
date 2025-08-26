@@ -5,7 +5,7 @@ Bill is a cluster admin who wants to provide a mechanism for distributing secret
 First, Bill creates a Template in which Sealed Secret is mentioned:
 
 ```yaml
-apiVersion: tenantoperator.stakater.com/v1alpha1
+apiVersion: templates.stakater.com/v1alpha1
 kind: Template
 metadata:
   name: tenant-sealed-secret
@@ -34,7 +34,7 @@ For this, he can use the support for [common](../../tenant/how-to-guides/assign-
 Bill has to specify a label on namespaces in which he needs the secret. He can add it to all namespaces inside a tenant or some specific namespaces depending on the use case.
 
 ```yaml
-apiVersion: tenantoperator.stakater.com/v1beta3
+apiVersion: templates.stakater.com/v1beta3
 kind: Tenant
 metadata:
   name: bluesky
@@ -74,7 +74,7 @@ Bill has added support for a new label `distribute-image-pull-secret: true"` for
 Finally, Bill creates a `ClusterTemplateInstance` which will deploy the Sealed Secrets using the newly created project label and template:
 
 ```yaml
-apiVersion: tenantoperator.stakater.com/v1alpha1
+apiVersion: templates.stakater.com/v1alpha1
 kind: ClusterTemplateInstance
 metadata:
   name: tenant-sealed-secret

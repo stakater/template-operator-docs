@@ -12,7 +12,7 @@ Bill, the cluster admin, wants to deploy a docker pull secret in namespaces wher
 First, Bill creates a template:
 
 ```yaml
-apiVersion: tenantoperator.stakater.com/v1alpha1
+apiVersion: templates.stakater.com/v1alpha1
 kind: Template
 metadata:
   name: docker-secret
@@ -30,7 +30,7 @@ resources:
 Once the template has been created, Bill makes a `ClusterTemplateInstance` referring to the `Template` he wants to deploy with `template` field, and the namespaces where resources are needed, using `selector` field:
 
 ```yaml
-apiVersion: tenantoperator.stakater.com/v1alpha1
+apiVersion: templates.stakater.com/v1alpha1
 kind: ClusterTemplateInstance
 metadata:
   name: docker-secret-group-instance
