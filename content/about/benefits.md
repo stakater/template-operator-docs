@@ -1,6 +1,6 @@
 # Benefits of Template Operator
 
-Template Operator allows admins and platform teams to define reusable YAML templates for namespace resources (like Namespaces, RBAC, NetworkPolicies, ResourceQuotas, etc.), which the operator will render and apply when namespaces are created or updated. It also supports copying of secret and configmap from a particular namespaces to multiple namespaces selected via labels.
+Template Operator allows admins and platform teams to define reusable YAML templates for namespace resources (like Namespaces, RBAC, NetworkPolicies, ResourceQuotas, etc.), which the operator will render and apply when namespaces are created or updated. It also supports copying of secret and configMap from a particular namespaces to multiple namespaces selected via labels.
 
 ## 🔹 1. Consistency Across Namespaces
 

@@ -11,7 +11,7 @@ This document contains instructions on installing, uninstalling and configuring 
 * A **Kubernetes** cluster (v1.24 or higher)
 * [Helm CLI](https://helm.sh/docs/intro/install/)
 * [kubectl](https://kubernetes.io/docs/tasks/tools/)
-* To run on Kubernetes, Template Operator relies on [Cert Manager](https://cert-manager.io/docs/installation/) and its Certificate CRs to create tls secrets for webhooks, these certificates will be handled by templates in Helm Chart
+* To run on Kubernetes, Template Operator relies on [Cert Manager](https://cert-manager.io/docs/installation/) and its Certificate CRs to create `TLS` secrets for webhooks, these certificates will be handled by templates in Helm Chart
 
 ## Installing via Helm CLI
 

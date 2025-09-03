@@ -28,46 +28,7 @@ resources:
             "jenkins.io/credentials-description": credentials from Kubernetes
 ```
 
-Once the template has been created, Bill has to edit the `Tenant` to add unique label to namespaces in which the secret has to be deployed.
-For this, he can use the support for [common](https://docs.stakater.com/Template Operator/latest/kubernetes-resources/tenant/how-to-guides/assign-metadata.html#distributing-common-labels-and-annotations) and [specific](https://docs.stakater.com/Template Operator/latest/kubernetes-resources/tenant/how-to-guides/assign-metadata.html#distributing-specific-labels-and-annotations) labels across namespaces.
-
-Bill has to specify a label on namespaces in which he needs the secret. He can add it to all namespaces inside a tenant or some specific namespaces depending on the use case.
-
-```yaml
-apiVersion: templates.stakater.com/v1beta3
-kind: Tenant
-metadata:
-  name: bluesky
-spec:
-  quota: small
-  accessControl:
-    owners:
-      users:
-        - anna@aurora.org
-        - anthony@aurora.org
-    editors:
-      users:
-        - john@aurora.org
-      groups:
-        - alpha
-  namespaces:
-    sandboxes:
-      enabled: false
-    withTenantPrefix:
-      - dev
-      - build
-      - prod
-    withoutTenantPrefix: []
-    metadata:
-      specific:
-        - namespaces:
-            - bluesky-test-namespace
-          labels:
-            distribute-image-pull-secret: true
-      common:
-        labels:
-          distribute-image-pull-secret: true
-```
+Once the template has been created, Bill has to put unique label on namespaces in which the secrets have to be deployed.
 
 Bill has added support for a new label `distribute-image-pull-secret: true"` for tenant projects/namespaces, now Template Operator will add that label depending on the used field.
 

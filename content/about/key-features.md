@@ -21,7 +21,7 @@ More details on [Distributing Template Resources](../kubernetes-resources/how-to
 
 ### Cross Namespace Resource Distribution
 
-Template Operator supports cloning of secrets and ConfigMaps from one namespace to another namespace based on label selectors. It uses templates to enable users to provide reference to secrets and ConfigMaps. It uses a Cluster Template Instance to distribute those secrets and namespaces in matching namespaces, while Template Instance copies secret and configmap to a single namespace.
+Template Operator supports cloning of secrets and ConfigMaps from one namespace to another namespace based on label selectors. It uses templates to enable users to provide reference to secrets and ConfigMaps. It uses a Cluster Template Instance to distribute those secrets and namespaces in matching namespaces, while Template Instance copies secret and configMap to a single namespace.
 
 More details on [Copying Secrets and ConfigMaps](../kubernetes-resources/how-to-guides/copying-resources.md)
 
