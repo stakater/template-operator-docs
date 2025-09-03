@@ -20,8 +20,8 @@ Clusters can be shared in various ways:
 
 These scenarios are collectively referred to as multi-tenancy. While Kubernetes and many managed applications provide foundational resources to achieve multi-tenancy, leveraging these primitives requires professional expertise and deep knowledge of the platform.
 
-The Template Operator builds on Kubernetes' capabilities, simplifying the orchestration of secure and efficient multi-tenancy. By addressing the unique needs of shared clusters, MTO helps cluster administrators overcome the inherent complexities of multi-tenancy, enabling them to harness its full potential.
+The Template Operator builds on Kubernetes' capabilities, simplifying the orchestration of secure and efficient multi-tenancy. By addressing the unique needs of shared clusters, Template Operator helps cluster administrators overcome the inherent complexities of multi-tenancy, enabling them to harness its full potential.
 
 ## Installation
 
-Refer to the [installation guide](./installation/overview.md) for setting up MTO.
+Refer to the [installation guide](./installation/overview.md) for setting up Template Operator.

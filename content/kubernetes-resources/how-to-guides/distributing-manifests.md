@@ -1,6 +1,6 @@
 # Distributing Resources in Namespaces
 
-Multi Tenant Operator has two Custom Resources which can cover this need using the [`Template` CR](../../template/template.md), depending upon the conditions and preference.
+Multi Tenant Operator has two Custom Resources which can cover this need using the [`Template` CR](../template.md), depending upon the conditions and preference.
 
 1. ClusterTemplateInstance
 1. TemplateInstance

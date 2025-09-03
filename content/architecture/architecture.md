@@ -1,6 +1,6 @@
 # Architecture
 
-The Template Operator is a comprehensive system designed to manage multi-tenancy in Kubernetes environments. Following is the architecture of the MTO:
+The Template Operator is a comprehensive system designed to manage multi-tenancy in Kubernetes environments. Following is the architecture of the Template Operator:
 
 Template Operator consists of multiple controllers and components that work together to provide the functionality of the system. The following is a list of the components that make up the Template Operator system:
 

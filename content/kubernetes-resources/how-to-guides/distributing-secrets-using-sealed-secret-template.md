@@ -1,6 +1,6 @@
 # Distributing Secrets Using Sealed Secrets Template
 
-Bill is a cluster admin who wants to provide a mechanism for distributing secrets in multiple namespaces. For this, he wants to use [Sealed Secrets](https://github.com/bitnami-labs/sealed-secrets#sealed-secrets-for-kubernetes) as the solution by adding them to MTO Template CR
+Bill is a cluster admin who wants to provide a mechanism for distributing secrets in multiple namespaces. For this, he wants to use [Sealed Secrets](https://github.com/bitnami-labs/sealed-secrets#sealed-secrets-for-kubernetes) as the solution by adding them to Template Operator Template CR
 
 First, Bill creates a Template in which Sealed Secret is mentioned:
 
@@ -29,7 +29,7 @@ resources:
 ```
 
 Once the template has been created, Bill has to edit the `Tenant` to add unique label to namespaces in which the secret has to be deployed.
-For this, he can use the support for [common](../../tenant/how-to-guides/assign-metadata.md#distributing-common-labels-and-annotations) and [specific](../../tenant/how-to-guides/assign-metadata.md#distributing-specific-labels-and-annotations) labels across namespaces.
+For this, he can use the support for [common](https://docs.stakater.com/Template Operator/latest/kubernetes-resources/tenant/how-to-guides/assign-metadata.html#distributing-common-labels-and-annotations) and [specific](https://docs.stakater.com/Template Operator/latest/kubernetes-resources/tenant/how-to-guides/assign-metadata.html#distributing-specific-labels-and-annotations) labels across namespaces.
 
 Bill has to specify a label on namespaces in which he needs the secret. He can add it to all namespaces inside a tenant or some specific namespaces depending on the use case.
 
@@ -69,7 +69,7 @@ spec:
           distribute-image-pull-secret: true
 ```
 
-Bill has added support for a new label `distribute-image-pull-secret: true"` for tenant projects/namespaces, now MTO will add that label depending on the used field.
+Bill has added support for a new label `distribute-image-pull-secret: true"` for tenant projects/namespaces, now Template Operator will add that label depending on the used field.
 
 Finally, Bill creates a `ClusterTemplateInstance` which will deploy the Sealed Secrets using the newly created project label and template:
 
@@ -86,4 +86,4 @@ spec:
   sync: true
 ```
 
-MTO will now deploy the Sealed Secrets mentioned in `Template` to namespaces which have the mentioned label. The rest of the work to deploy secret from a Sealed Secret has to be done by Sealed Secrets Controller.
+Template Operator will now deploy the Sealed Secrets mentioned in `Template` to namespaces which have the mentioned label. The rest of the work to deploy secret from a Sealed Secret has to be done by Sealed Secrets Controller.

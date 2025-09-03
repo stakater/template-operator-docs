@@ -15,16 +15,16 @@ This document contains instructions on installing, uninstalling and configuring 
 
 ## Installing via Helm CLI
 
-* Public Helm Chart of MTO is available at [Stakater ghcr Packages](https://github.com/orgs/stakater/packages/container/package/public/charts/template-operator) and available Helm options can be seen at [MTO Helm Chart Options](./helm.md)
+* Public Helm Chart of Template Operator is available at [Stakater ghcr Packages](https://github.com/orgs/stakater/packages/container/package/public/charts/template-operator)
 
-* Use `helm install` command to install MTO helm chart.
+* Use `helm install` command to install Template Operator helm chart.
 
 ```terminal
 helm install template-operator oci://ghcr.io/stakater/public/charts/template-operator --namespace template-operator-system --create-namespace
 ```
 
 !!! note
-    It is better to install MTO in its preferred namespace, `template-operator-system`
+    It is better to install Template Operator in its preferred namespace, `template-operator-system`
 
 Wait for the pods to be up
 
@@ -34,7 +34,7 @@ kubectl get pods -n template-operator-system --watch
 
 ## Uninstall via Helm CLI
 
-MTO can be uninstalled by Helm CLI if Helm was used to install it earlier.
+Template Operator can be uninstalled by Helm CLI if Helm was used to install it earlier.
 
 * Use `helm uninstall` command to remove the earlier created `Helm Release` in `template-operator-system` namespace
 

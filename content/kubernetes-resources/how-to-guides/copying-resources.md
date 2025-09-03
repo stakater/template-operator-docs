@@ -50,7 +50,7 @@ spec:
 
 After reconciliation, you will be able to see those secrets in namespaces having mentioned label.
 
-MTO will keep injecting this secret to the new namespaces created with that label.
+Template Operator will keep injecting this secret to the new namespaces created with that label.
 
 ```bash
 kubectl get secret registry-secret -n example-ns-1
