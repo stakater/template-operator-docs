@@ -30,7 +30,7 @@ resources:
 
 Once the template has been created, Bill has to put unique label on namespaces in which the secrets have to be deployed.
 
-Bill has added support for a new label `distribute-image-pull-secret: true"` for tenant projects/namespaces, now Template Operator will add that label depending on the used field.
+Bill has added support for a new label `distribute-image-pull-secret: true` for tenant projects/namespaces, now Template Operator will add that label depending on the used field.
 
 Finally, Bill creates a `ClusterTemplateInstance` which will deploy the Sealed Secrets using the newly created project label and template:
 

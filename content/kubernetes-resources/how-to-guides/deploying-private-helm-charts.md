@@ -19,7 +19,7 @@ resources:
     chart:
       repository:
         name: random-chart
-        repoUrl: 'oci://ghcr.io/stakater/charts/random-chart'
+        repoUrl: "oci://ghcr.io/stakater/charts/random-chart"
         version: 0.0.15
         password:
           key: password
