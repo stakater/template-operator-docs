@@ -22,8 +22,10 @@ node_modules
 # Build files
 site/
 mkdocs.yml
+!theme_override/mkdocs.yml
 
 .idea
 styles
 
 my-venv/
+test/
