@@ -2,6 +2,8 @@
   {
     "version": "renovate-stakater-vale-package-0.x",
     "title": "renovate-stakater-vale-package-0.x",
-    "aliases": []
+    "aliases": [
+      "latest"
+    ]
   }
 ]
