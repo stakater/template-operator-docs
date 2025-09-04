@@ -1,0 +1,48 @@
+site_name: Template Operator
+docs_dir: content
+site_url: https://docs.stakater.com/template-operator-docs/
+repo_url: https://github.com/stakater/template-operator-docs
+edit_uri: blob/main/content/
+theme:
+  favicon: assets/images/favicon.svg
+
+strict: true
+validation:
+  links:
+    anchors: warn
+
+extra:
+  version:
+    provider: mike
+    default: latest
+
+nav:
+  - index.md
+  - About:
+      - about/key-features.md
+      - about/benefits.md
+  - Architecture:
+      - architecture/architecture.md
+      - architecture/logs-metrics.md
+  - Installation:
+      - installation/overview.md
+      - installation/openshift.md
+      - installation/kubernetes.md
+  - Kubernetes Resources:
+      - architecture/concepts.md
+      - kubernetes-resources/template.md
+      - kubernetes-resources/template-instance.md
+      - kubernetes-resources/cluster-template-instance.md
+  - How-to Guides:
+      - Template:
+          - kubernetes-resources/how-to-guides/copying-resources.md
+          - kubernetes-resources/how-to-guides/copying-resources-2.md
+          - kubernetes-resources/how-to-guides/distributing-manifests.md
+          - kubernetes-resources/how-to-guides/deploying-templates.md
+          - kubernetes-resources/how-to-guides/resource-sync-by-tgi.md
+          - kubernetes-resources/how-to-guides/distributing-secrets-using-sealed-secret-template.md
+          - kubernetes-resources/how-to-guides/deploying-private-helm-charts.md
+          - kubernetes-resources/how-to-guides/template-default-params.md
+  - changelog.md
+  - eula.md
+  - troubleshooting.md
