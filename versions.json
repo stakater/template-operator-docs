@@ -15,5 +15,10 @@
     "aliases": [
       "latest"
     ]
+  },
+  {
+    "version": "renovate-main-actions-checkout-5.x",
+    "title": "renovate-main-actions-checkout-5.x",
+    "aliases": []
   }
 ]
