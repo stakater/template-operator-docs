@@ -12,13 +12,13 @@
   {
     "version": "renovate-main-stakater-.github-0.x",
     "title": "renovate-main-stakater-.github-0.x",
-    "aliases": [
-      "latest"
-    ]
+    "aliases": []
   },
   {
     "version": "renovate-main-actions-checkout-5.x",
     "title": "renovate-main-actions-checkout-5.x",
-    "aliases": []
+    "aliases": [
+      "latest"
+    ]
   }
 ]
