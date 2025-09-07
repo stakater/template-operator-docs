@@ -22,6 +22,11 @@
     ]
   },
   {
+    "version": "renovate-main-dotenv-17.x",
+    "title": "renovate-main-dotenv-17.x",
+    "aliases": []
+  },
+  {
     "version": "renovate-main-actions-checkout-5.x",
     "title": "renovate-main-actions-checkout-5.x",
     "aliases": []
