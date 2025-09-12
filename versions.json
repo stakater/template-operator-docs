@@ -17,9 +17,7 @@
   {
     "version": "renovate-0.1-actions-checkout-5.x",
     "title": "renovate-0.1-actions-checkout-5.x",
-    "aliases": [
-      "latest"
-    ]
+    "aliases": []
   },
   {
     "version": "renovate-stakater-vale-package-0.x",
@@ -34,7 +32,9 @@
   {
     "version": "renovate-main-stakater-.github-0.x",
     "title": "renovate-main-stakater-.github-0.x",
-    "aliases": []
+    "aliases": [
+      "latest"
+    ]
   },
   {
     "version": "renovate-main-minimatch-6.x",
