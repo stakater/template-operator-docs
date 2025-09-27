@@ -2,94 +2,94 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://docs.stakater.com/template-operator-docs/renovate-0.1-stakater-.github-0.x/index.html</loc>
-         <lastmod>2025-09-24</lastmod>
+         <lastmod>2025-09-27</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/template-operator-docs/renovate-0.1-stakater-.github-0.x/changelog.html</loc>
-         <lastmod>2025-09-24</lastmod>
+         <lastmod>2025-09-27</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/template-operator-docs/renovate-0.1-stakater-.github-0.x/eula.html</loc>
-         <lastmod>2025-09-24</lastmod>
+         <lastmod>2025-09-27</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/template-operator-docs/renovate-0.1-stakater-.github-0.x/troubleshooting.html</loc>
-         <lastmod>2025-09-24</lastmod>
+         <lastmod>2025-09-27</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/template-operator-docs/renovate-0.1-stakater-.github-0.x/about/benefits.html</loc>
-         <lastmod>2025-09-24</lastmod>
+         <lastmod>2025-09-27</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/template-operator-docs/renovate-0.1-stakater-.github-0.x/about/key-features.html</loc>
-         <lastmod>2025-09-24</lastmod>
+         <lastmod>2025-09-27</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/template-operator-docs/renovate-0.1-stakater-.github-0.x/architecture/architecture.html</loc>
-         <lastmod>2025-09-24</lastmod>
+         <lastmod>2025-09-27</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/template-operator-docs/renovate-0.1-stakater-.github-0.x/architecture/concepts.html</loc>
-         <lastmod>2025-09-24</lastmod>
+         <lastmod>2025-09-27</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/template-operator-docs/renovate-0.1-stakater-.github-0.x/architecture/logs-metrics.html</loc>
-         <lastmod>2025-09-24</lastmod>
+         <lastmod>2025-09-27</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/template-operator-docs/renovate-0.1-stakater-.github-0.x/installation/kubernetes.html</loc>
-         <lastmod>2025-09-24</lastmod>
+         <lastmod>2025-09-27</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/template-operator-docs/renovate-0.1-stakater-.github-0.x/installation/openshift.html</loc>
-         <lastmod>2025-09-24</lastmod>
+         <lastmod>2025-09-27</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/template-operator-docs/renovate-0.1-stakater-.github-0.x/installation/overview.html</loc>
-         <lastmod>2025-09-24</lastmod>
+         <lastmod>2025-09-27</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/template-operator-docs/renovate-0.1-stakater-.github-0.x/kubernetes-resources/cluster-template-instance.html</loc>
-         <lastmod>2025-09-24</lastmod>
+         <lastmod>2025-09-27</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/template-operator-docs/renovate-0.1-stakater-.github-0.x/kubernetes-resources/template-instance.html</loc>
-         <lastmod>2025-09-24</lastmod>
+         <lastmod>2025-09-27</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/template-operator-docs/renovate-0.1-stakater-.github-0.x/kubernetes-resources/template.html</loc>
-         <lastmod>2025-09-24</lastmod>
+         <lastmod>2025-09-27</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/template-operator-docs/renovate-0.1-stakater-.github-0.x/kubernetes-resources/how-to-guides/copying-resources-2.html</loc>
-         <lastmod>2025-09-24</lastmod>
+         <lastmod>2025-09-27</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/template-operator-docs/renovate-0.1-stakater-.github-0.x/kubernetes-resources/how-to-guides/copying-resources.html</loc>
-         <lastmod>2025-09-24</lastmod>
+         <lastmod>2025-09-27</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/template-operator-docs/renovate-0.1-stakater-.github-0.x/kubernetes-resources/how-to-guides/deploying-private-helm-charts.html</loc>
-         <lastmod>2025-09-24</lastmod>
+         <lastmod>2025-09-27</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/template-operator-docs/renovate-0.1-stakater-.github-0.x/kubernetes-resources/how-to-guides/deploying-templates.html</loc>
-         <lastmod>2025-09-24</lastmod>
+         <lastmod>2025-09-27</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/template-operator-docs/renovate-0.1-stakater-.github-0.x/kubernetes-resources/how-to-guides/distributing-manifests.html</loc>
-         <lastmod>2025-09-24</lastmod>
+         <lastmod>2025-09-27</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/template-operator-docs/renovate-0.1-stakater-.github-0.x/kubernetes-resources/how-to-guides/distributing-secrets-using-sealed-secret-template.html</loc>
-         <lastmod>2025-09-24</lastmod>
+         <lastmod>2025-09-27</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/template-operator-docs/renovate-0.1-stakater-.github-0.x/kubernetes-resources/how-to-guides/resource-sync-by-tgi.html</loc>
-         <lastmod>2025-09-24</lastmod>
+         <lastmod>2025-09-27</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/template-operator-docs/renovate-0.1-stakater-.github-0.x/kubernetes-resources/how-to-guides/template-default-params.html</loc>
-         <lastmod>2025-09-24</lastmod>
+         <lastmod>2025-09-27</lastmod>
     </url>
 </urlset>
