@@ -37,9 +37,7 @@
   {
     "version": "renovate-main-python-3.x",
     "title": "renovate-main-python-3.x",
-    "aliases": [
-      "latest"
-    ]
+    "aliases": []
   },
   {
     "version": "renovate-main-minimatch-6.x",
@@ -54,7 +52,9 @@
   {
     "version": "renovate-main-actions-checkout-6.x",
     "title": "renovate-main-actions-checkout-6.x",
-    "aliases": []
+    "aliases": [
+      "latest"
+    ]
   },
   {
     "version": "renovate-main-actions-checkout-5.x",
