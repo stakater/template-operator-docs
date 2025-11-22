@@ -52,6 +52,11 @@
     "aliases": []
   },
   {
+    "version": "renovate-main-actions-checkout-6.x",
+    "title": "renovate-main-actions-checkout-6.x",
+    "aliases": []
+  },
+  {
     "version": "renovate-main-actions-checkout-5.x",
     "title": "renovate-main-actions-checkout-5.x",
     "aliases": []
