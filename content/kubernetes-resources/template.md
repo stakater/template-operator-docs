@@ -8,7 +8,7 @@ Also, you can define custom variables in `Template`, `TemplateInstance` and `Clu
 
 ## Specification
 
-`Template` Custom Resource (CR) supports three key methods for defining and managing resources: `manifests`, `helm`, and `resource mapping`. Let’s dive into each method, their differences, and their use cases:
+`Template` Custom Resource (CR) supports four key methods for defining and managing resources: `manifests`, `helm`, `gotemplate`, and `resource mapping`. Let’s dive into each method, their differences, and their use cases:
 
 ### 1. Manifests
 
@@ -140,7 +140,49 @@ A brief explanation of the fields in the Helm section:
     * `forceString`: Whether to use `--set` or `--set-string` when setting the value. Default is `false` (use `--set`).
 * `values`: The values file for the Helm chart.
 
-### 3. Resource Mapping
+### 3. Go Template
+
+This method uses inline Go templates to dynamically generate Kubernetes manifests. It leverages Go’s `text/template` syntax along with Sprig functions for string operations, date formatting, conditionals, arithmetic, and more.
+
+#### How It Works
+
+* The `gotemplate` section contains YAML written with Go template expressions such as `{{ .Name }}` or `{{ now | date "2006-01-02" }}`.
+* Template `parameters` are injected at runtime, and Sprig functions can be used to transform or compute values.
+* The rendered output must be valid Kubernetes YAML, which the operator then applies to the target namespaces.
+
+#### Use Cases
+
+* Ideal for dynamic resource generation without maintaining a full Helm chart.
+* Useful when you need lightweight templating with conditional or computed fields.
+* Suitable for resources that change based on tenant, namespace, or environment attributes.
+
+#### Example
+
+```yaml
+apiVersion: templates.stakater.com/v1alpha1
+kind: Template
+metadata:
+  name: inline-gotemplate
+parameters:
+  - name: Name
+    value: "sample-App"
+  - name: LogLevel
+    value: "INFO"
+resources:
+  gotemplate: |
+    apiVersion: v1
+    kind: ConfigMap
+    metadata:
+      name: "{{ .Name | lower }}-config"
+      labels:
+        app: "{{ .Name | lower }}"
+    data:
+      appName: "{{ .Name }}"
+      logLevel: "{{ .LogLevel }}"
+      configVersion: "{{ now | date "20060102" }}"
+```
+
+### 4. Resource Mapping
 
 This approach maps secrets and ConfigMaps from one tenant's namespace to another tenant's namespace, or within a tenant's namespace.
 
