@@ -2654,15 +2654,15 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-resource-mapping" class="md-nav__link">
+  <a href="#3-gotemplate" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Resource Mapping
+        3. GoTemplate
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="3. Resource Mapping">
+    <nav class="md-nav" aria-label="3. GoTemplate">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2689,6 +2689,56 @@ This documentation is for a pull request deployment and is unreleased, it is onl
         
           <li class="md-nav__item">
   <a href="#example_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-resource-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Resource Mapping
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Resource Mapping">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-it-works_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Works
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-cases_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Cases
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_3" class="md-nav__link">
     <span class="md-ellipsis">
       
         Example
@@ -3335,15 +3385,15 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-resource-mapping" class="md-nav__link">
+  <a href="#3-gotemplate" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Resource Mapping
+        3. GoTemplate
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="3. Resource Mapping">
+    <nav class="md-nav" aria-label="3. GoTemplate">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3370,6 +3420,56 @@ This documentation is for a pull request deployment and is unreleased, it is onl
         
           <li class="md-nav__item">
   <a href="#example_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-resource-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Resource Mapping
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Resource Mapping">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-it-works_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Works
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-cases_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Use Cases
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_3" class="md-nav__link">
     <span class="md-ellipsis">
       
         Example
@@ -3414,7 +3514,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 <p>They can contain pre-defined parameters such as <code>${namespace}</code>/<code>${tenant}</code>.</p>
 <p>Also, you can define custom variables in <code>Template</code>, <code>TemplateInstance</code> and <code>ClusterTemplateInstance</code>. The parameters defined in <code>Templates</code> are overwritten the values defined in <code>TemplateInstance</code> and <code>ClusterTemplateInstance</code>.</p>
 <h2 id="specification">Specification<a class="headerlink" href="#specification" title="Permanent link">#</a></h2>
-<p><code>Template</code> Custom Resource (CR) supports three key methods for defining and managing resources: <code>manifests</code>, <code>helm</code>, and <code>resource mapping</code>. Let’s dive into each method, their differences, and their use cases:</p>
+<p><code>Template</code> Custom Resource (CR) supports three key methods for defining and managing resources: <code>manifests</code>, <code>helm</code>, <code>gotemplate</code>, and <code>resource mapping</code>. Let’s dive into each method, their differences, and their use cases:</p>
 <h3 id="1-manifests">1. Manifests<a class="headerlink" href="#1-manifests" title="Permanent link">#</a></h3>
 <p>This approach uses raw Kubernetes manifests (YAML files) that specify resources directly in the template.</p>
 <h4 id="how-it-works">How It Works<a class="headerlink" href="#how-it-works" title="Permanent link">#</a></h4>
@@ -3545,18 +3645,55 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
 <li><code>values</code>: The values file for the Helm chart.</li>
 </ul>
-<h3 id="3-resource-mapping">3. Resource Mapping<a class="headerlink" href="#3-resource-mapping" title="Permanent link">#</a></h3>
-<p>This approach maps secrets and ConfigMaps from one tenant's namespace to another tenant's namespace, or within a tenant's namespace.</p>
+<h3 id="3-gotemplate">3. GoTemplate<a class="headerlink" href="#3-gotemplate" title="Permanent link">#</a></h3>
+<p>This method uses inline Go templates to dynamically generate Kubernetes manifests. It leverages Go’s <code>text/template</code> syntax along with Sprig functions for string operations, date formatting, conditionals, arithmetic, and more.</p>
 <h4 id="how-it-works_2">How It Works<a class="headerlink" href="#how-it-works_2" title="Permanent link">#</a></h4>
+<ul>
+<li>The <code>gotemplate</code> section contains YAML written with Go template expressions such as <code>{{ .Name }}</code> or <code>{{ now | date "2006-01-02" }}</code>.</li>
+<li>Template <code>parameters</code> are injected at runtime, and Sprig functions can be used to transform or compute values.</li>
+<li>The rendered output must be valid Kubernetes YAML, which the operator then applies to the target namespaces.</li>
+</ul>
+<h4 id="use-cases_2">Use Cases<a class="headerlink" href="#use-cases_2" title="Permanent link">#</a></h4>
+<ul>
+<li>Ideal for dynamic resource generation without maintaining a full Helm chart.</li>
+<li>Useful when you need lightweight templating with conditional or computed fields.</li>
+<li>Suitable for resources that change based on tenant, namespace, or environment attributes.</li>
+</ul>
+<h4 id="example_2">Example<a class="headerlink" href="#example_2" title="Permanent link">#</a></h4>
+<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">templates.stakater.com/v1alpha1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Template</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">inline-gotemplate</span>
+<span class="nt">parameters</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Name</span>
+<span class="w">    </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">"sample-App"</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LogLevel</span>
+<span class="w">    </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">"INFO"</span>
+<span class="nt">resources</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">gotemplate</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">    </span><span class="no">apiVersion: v1</span>
+<span class="w">    </span><span class="no">kind: ConfigMap</span>
+<span class="w">    </span><span class="no">metadata:</span>
+<span class="w">      </span><span class="no">name: "{{ .Name | lower }}-config"</span>
+<span class="w">      </span><span class="no">labels:</span>
+<span class="w">        </span><span class="no">app: "{{ .Name | lower }}"</span>
+<span class="w">    </span><span class="no">data:</span>
+<span class="w">      </span><span class="no">appName: "{{ .Name }}"</span>
+<span class="w">      </span><span class="no">logLevel: "{{ .LogLevel }}"</span>
+<span class="w">      </span><span class="no">configVersion: "{{ now | date "2006-01-02" }}"</span>
+</code></pre></div>
+<h3 id="4-resource-mapping">4. Resource Mapping<a class="headerlink" href="#4-resource-mapping" title="Permanent link">#</a></h3>
+<p>This approach maps secrets and ConfigMaps from one tenant's namespace to another tenant's namespace, or within a tenant's namespace.</p>
+<h4 id="how-it-works_3">How It Works<a class="headerlink" href="#how-it-works_3" title="Permanent link">#</a></h4>
 <ul>
 <li>The template contains mappings to pre-existing resources (secrets and ConfigMaps only).</li>
 </ul>
-<h4 id="use-cases_2">Use Cases<a class="headerlink" href="#use-cases_2" title="Permanent link">#</a></h4>
+<h4 id="use-cases_3">Use Cases<a class="headerlink" href="#use-cases_3" title="Permanent link">#</a></h4>
 <ul>
 <li>Ideal for maintaining consistency across shared resources without duplicating definitions.</li>
 <li>Best when resources already exist.</li>
 </ul>
-<h4 id="example_2">Example<a class="headerlink" href="#example_2" title="Permanent link">#</a></h4>
+<h4 id="example_3">Example<a class="headerlink" href="#example_3" title="Permanent link">#</a></h4>
 <div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">templates.stakater.com/v1alpha1</span>
 <span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Template</span>
 <span class="nt">metadata</span><span class="p">:</span>
