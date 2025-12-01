@@ -3144,7 +3144,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 <h1 id="concepts">Concepts<a class="headerlink" href="#concepts" title="Permanent link">#</a></h1>
 <p>Here are the key concepts of Template Operator:</p>
 <h2 id="template">Template<a class="headerlink" href="#template" title="Permanent link">#</a></h2>
-<p>A <strong>Template</strong> is a reusable blueprint in Template Operator that defines configurations for Kubernetes resources. It supports raw manifests, Helm charts, or resource mappings, enabling standardization and automation across multiple tenants.</p>
+<p>A <strong>Template</strong> is a reusable blueprint in Template Operator that defines configurations for Kubernetes resources. It supports raw manifests, gotemplate based dynamic manifests, Helm charts, or resource mappings, enabling standardization and automation across multiple tenants.</p>
 <h2 id="template-instance-ti">Template Instance (TI)<a class="headerlink" href="#template-instance-ti" title="Permanent link">#</a></h2>
 <p>A <strong>Template Instance</strong> is a concrete implementation of a <strong>Template</strong>, created with specific parameters tailored for a particular tenant or use case. It generates actual Kubernetes resources based on the defined template.</p>
 <h2 id="cluster-template-instance-cti">Cluster Template Instance (CTI)<a class="headerlink" href="#cluster-template-instance-cti" title="Permanent link">#</a></h2>
