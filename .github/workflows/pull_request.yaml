@@ -8,7 +8,7 @@ on:
 
 jobs:
   doc_qa:
-    uses: stakater/.github/.github/workflows/pull_request_doc_qa.yaml@v0.0.131
+    uses: stakater/.github/.github/workflows/pull_request_doc_qa.yaml@v0.0.137
     with:
       MD_CONFIG: .github/md_config.json
       DOC_SRC: content README.md
@@ -23,7 +23,7 @@ jobs:
   build_container:
     needs: deploy_doc
     if: ${{ github.base_ref == 'main' }}
-    uses: stakater/.github/.github/workflows/pull_request_container_build.yaml@v0.0.131
+    uses: stakater/.github/.github/workflows/pull_request_container_build.yaml@v0.0.137
     with:
       DOCKER_BUILD_CONTEXTS: content=https://github.com/stakater/template-operator-docs.git#pull-request-deployments
       DOCKER_FILE_PATH: Dockerfile
@@ -54,6 +54,12 @@ jobs:
         run: |
           docker run -d --name template-operator-docs -p 8080:8080 $IMAGE_PATH
       
+      - name: Wait for docs site to be ready
+        run: |
+          echo "Waiting for docs site to be ready..."
+          timeout 60 bash -c 'until curl -f http://127.0.0.1:8080/${{ env.CURRENT_BRANCH }}/ > /dev/null 2>&1; do sleep 2; done'
+          echo "Docs site is ready!"
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:

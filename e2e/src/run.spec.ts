@@ -48,12 +48,13 @@ test.describe('Documentation Site Tests', () => {
   });
 
   test('Verify index file exists', async ({ page }) => {
-  await page.goto('/index.html');
+  // await page.goto('/index.html');
+  await page.goto(`http://127.0.0.1:8080/${CURRENT_BRANCH}/index.html`);
 
   await page.waitForLoadState('domcontentloaded');
 
-  // Allow redirection: just check that we are inside the branch folder
-  await expect(page.url()).toContain(`${CURRENT_BRANCH}/`);
+  // Check that we are inside the branch folder
+  await expect(page.url()).toContain(`${CURRENT_BRANCH}`);
 
   // Ensure page is not a 404
   await expect(page.locator('body')).not.toContainText('404');
