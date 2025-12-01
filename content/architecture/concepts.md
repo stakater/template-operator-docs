@@ -4,7 +4,7 @@ Here are the key concepts of Template Operator:
 
 ## Template
 
-A **Template** is a reusable blueprint in Template Operator that defines configurations for Kubernetes resources. It supports raw manifests, Helm charts, or resource mappings, enabling standardization and automation across multiple tenants.
+A **Template** is a reusable blueprint in Template Operator that defines configurations for Kubernetes resources. It supports raw manifests, gotemplate based dynamic manifests, Helm charts, or resource mappings, enabling standardization and automation across multiple tenants.
 
 ## Template Instance (TI)
 

@@ -11,9 +11,9 @@ metadata:
 spec:
   template: networkpolicy
   sync: true
-parameters:
-  - name: CIDR_IP
-    value: "172.17.0.0/16"
+  parameters:
+    - name: CIDR_IP
+      value: "172.17.0.0/16"
 ```
 
 TemplateInstance are used to keep track of resources created from Templates, which are being instantiated inside a Namespace.
