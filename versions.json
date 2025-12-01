@@ -1,12 +1,5 @@
 [
   {
-    "version": "SA-7871_gotemplate-support-added",
-    "title": "SA-7871_gotemplate-support-added",
-    "aliases": [
-      "latest"
-    ]
-  },
-  {
     "version": "renovate-0.1-stakater-vale-package-0.x",
     "title": "renovate-0.1-stakater-vale-package-0.x",
     "aliases": []
