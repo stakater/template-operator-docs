@@ -179,7 +179,7 @@ resources:
     data:
       appName: "{{ .Name }}"
       logLevel: "{{ .LogLevel }}"
-      configVersion: "{{ now | date "20060102" }}"
+      configVersion: "{{ now | date "2006-01-02" }}"
 ```
 
 ### 4. Resource Mapping
