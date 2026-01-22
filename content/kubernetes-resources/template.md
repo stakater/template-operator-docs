@@ -8,7 +8,7 @@ Also, you can define custom variables in `Template`, `TemplateInstance` and `Clu
 
 ## Specification
 
-`Template` Custom Resource (CR) supports three key methods for defining and managing resources: `manifests`, `helm`, `gotemplate`, and `resource mapping`. Let’s dive into each method, their differences, and their use cases:
+`Template` Custom Resource (CR) supports four key methods for defining and managing resources: `manifests`, `helm`, `gotemplate`, and `resource mapping`. Let’s dive into each method, their differences, and their use cases:
 
 ### 1. Manifests
 
@@ -142,7 +142,7 @@ A brief explanation of the fields in the Helm section:
 
 ### 3. GoTemplate
 
-This method uses inline Go templates to dynamically generate Kubernetes manifests. It leverages Go’s `text/template` syntax along with Sprig functions for string operations, date formatting, conditionals, arithmetic, and more.
+This method uses inline Go templates to dynamically generate Kubernetes manifests. It leverages Go's [text/template](https://pkg.go.dev/text/template) syntax along with [Sprig functions](https://masterminds.github.io/sprig/) for string operations, date formatting, conditionals, arithmetic, and more.
 
 #### How It Works
 
