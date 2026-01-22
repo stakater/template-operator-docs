@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.svg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
@@ -26,7 +26,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -3514,7 +3514,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 <p>They can contain pre-defined parameters such as <code>${namespace}</code>/<code>${tenant}</code>.</p>
 <p>Also, you can define custom variables in <code>Template</code>, <code>TemplateInstance</code> and <code>ClusterTemplateInstance</code>. The parameters defined in <code>Templates</code> are overwritten the values defined in <code>TemplateInstance</code> and <code>ClusterTemplateInstance</code>.</p>
 <h2 id="specification">Specification<a class="headerlink" href="#specification" title="Permanent link">#</a></h2>
-<p><code>Template</code> Custom Resource (CR) supports three key methods for defining and managing resources: <code>manifests</code>, <code>helm</code>, <code>gotemplate</code>, and <code>resource mapping</code>. Let’s dive into each method, their differences, and their use cases:</p>
+<p><code>Template</code> Custom Resource (CR) supports four key methods for defining and managing resources: <code>manifests</code>, <code>helm</code>, <code>gotemplate</code>, and <code>resource mapping</code>. Let’s dive into each method, their differences, and their use cases:</p>
 <h3 id="1-manifests">1. Manifests<a class="headerlink" href="#1-manifests" title="Permanent link">#</a></h3>
 <p>This approach uses raw Kubernetes manifests (YAML files) that specify resources directly in the template.</p>
 <h4 id="how-it-works">How It Works<a class="headerlink" href="#how-it-works" title="Permanent link">#</a></h4>
@@ -3646,7 +3646,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 <li><code>values</code>: The values file for the Helm chart.</li>
 </ul>
 <h3 id="3-gotemplate">3. GoTemplate<a class="headerlink" href="#3-gotemplate" title="Permanent link">#</a></h3>
-<p>This method uses inline Go templates to dynamically generate Kubernetes manifests. It leverages Go’s <code>text/template</code> syntax along with Sprig functions for string operations, date formatting, conditionals, arithmetic, and more.</p>
+<p>This method uses inline Go templates to dynamically generate Kubernetes manifests. It leverages Go's <a href="https://pkg.go.dev/text/template">text/template</a> syntax along with <a href="https://masterminds.github.io/sprig/">Sprig functions</a> for string operations, date formatting, conditionals, arithmetic, and more.</p>
 <h4 id="how-it-works_2">How It Works<a class="headerlink" href="#how-it-works_2" title="Permanent link">#</a></h4>
 <ul>
 <li>The <code>gotemplate</code> section contains YAML written with Go template expressions such as <code>{{ .Name }}</code> or <code>{{ now | date "2006-01-02" }}</code>.</li>
@@ -4412,10 +4412,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy", "navigation.tracking", "toc.follow", "navigation.top"], "search": "../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "latest", "provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy", "navigation.tracking", "toc.follow", "navigation.top"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "latest", "provider": "mike"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   
