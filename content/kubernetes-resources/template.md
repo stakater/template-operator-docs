@@ -140,9 +140,9 @@ A brief explanation of the fields in the Helm section:
     * `forceString`: Whether to use `--set` or `--set-string` when setting the value. Default is `false` (use `--set`).
 * `values`: The values file for the Helm chart.
 
-### 3. Go Template
+### 3. GoTemplate
 
-This method uses inline Go templates to dynamically generate Kubernetes manifests. It leverages Go’s `text/template` syntax along with Sprig functions for string operations, date formatting, conditionals, arithmetic, and more.
+This method uses inline Go templates to dynamically generate Kubernetes manifests. It leverages Go's [`text/template`](https://pkg.go.dev/text/template) syntax along with [Sprig functions](https://masterminds.github.io/sprig/) for string operations, date formatting, conditionals, arithmetic, and more.
 
 #### How It Works
 
