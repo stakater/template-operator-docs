@@ -52,6 +52,11 @@
     "aliases": []
   },
   {
+    "version": "renovate-main-nginxinc-nginx-unprivileged-1.x",
+    "title": "renovate-main-nginxinc-nginx-unprivileged-1.x",
+    "aliases": []
+  },
+  {
     "version": "renovate-main-minimatch-6.x",
     "title": "renovate-main-minimatch-6.x",
     "aliases": []
