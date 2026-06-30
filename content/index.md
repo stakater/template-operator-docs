@@ -22,4 +22,4 @@ Template Operator simplifies cluster administration, enhances security, and enab
 
 ## Installation
 
-Refer to the [installation guide](./installation/overview.md) for setting up Template Operator.
+Refer to the [installation guide](./getting-started/installation/overview.md) for setting up Template Operator.

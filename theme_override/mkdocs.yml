@@ -17,32 +17,35 @@ extra:
     default: latest
 
 nav:
-  - index.md
-  - About:
-      - about/key-features.md
-      - about/benefits.md
-  - Architecture:
-      - architecture/architecture.md
-      - architecture/logs-metrics.md
-  - Installation:
-      - installation/overview.md
-      - installation/openshift.md
-      - installation/kubernetes.md
-  - Kubernetes Resources:
-      - architecture/concepts.md
-      - kubernetes-resources/template.md
-      - kubernetes-resources/template-instance.md
-      - kubernetes-resources/cluster-template-instance.md
-  - How-to Guides:
-      - Template:
-          - kubernetes-resources/how-to-guides/copying-resources.md
-          - kubernetes-resources/how-to-guides/copying-resources-2.md
-          - kubernetes-resources/how-to-guides/distributing-manifests.md
-          - kubernetes-resources/how-to-guides/deploying-templates.md
-          - kubernetes-resources/how-to-guides/resource-sync-by-tgi.md
-          - kubernetes-resources/how-to-guides/distributing-secrets-using-sealed-secret-template.md
-          - kubernetes-resources/how-to-guides/deploying-private-helm-charts.md
-          - kubernetes-resources/how-to-guides/template-default-params.md
-  - changelog.md
-  - eula.md
-  - troubleshooting.md
+  - Overview:
+      - index.md
+      - overview/key-features.md
+      - overview/use-cases.md
+  - Concepts:
+      - concepts/architecture.md
+      - concepts/terminology.md
+      - Templates:
+          - concepts/templates/template.md
+          - concepts/templates/template-instance.md
+          - concepts/templates/cluster-template-instance.md
+  - Getting Started:
+      - Installation:
+          - getting-started/installation/overview.md
+          - getting-started/installation/openshift.md
+          - getting-started/installation/kubernetes.md
+  - Guides:
+      - Templates:
+          - guides/templates/deploying-templates.md
+          - guides/templates/distributing-manifests.md
+          - guides/templates/copying-resources.md
+          - guides/templates/copying-resources-2.md
+          - guides/templates/distributing-secrets-using-sealed-secret-template.md
+          - guides/templates/deploying-private-helm-charts.md
+          - guides/templates/template-default-params.md
+          - guides/templates/resource-sync-by-tgi.md
+  - Reference:
+      - reference/api.md
+      - reference/metrics.md
+  - Troubleshooting: troubleshooting.md
+  - Release Notes: release-notes.md
+  - EULA: eula.md
