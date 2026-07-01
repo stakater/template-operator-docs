@@ -75,5 +75,10 @@
     "version": "feat-reorganize-docs",
     "title": "feat-reorganize-docs",
     "aliases": []
+  },
+  {
+    "version": "chore-regenerate-api-reference",
+    "title": "chore-regenerate-api-reference",
+    "aliases": []
   }
 ]
