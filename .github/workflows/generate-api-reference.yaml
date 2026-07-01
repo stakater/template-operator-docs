@@ -28,4 +28,4 @@ jobs:
       ENABLE_STAKATER_AB_GIT_AUTH: true
     secrets:
       PR_TOKEN: ${{ secrets.PUBLISH_TOKEN }}
-      STAKATER_AB_REPOS: ${{ secrets.STAKATER_AB_GIT_AUTH }}
+      STAKATER_AB_REPOS: ${{ secrets.GHCR_TOKEN }}
