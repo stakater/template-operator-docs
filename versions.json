@@ -75,5 +75,10 @@
     "aliases": [
       "latest"
     ]
+  },
+  {
+    "version": "feat-docs-generation-action",
+    "title": "feat-docs-generation-action",
+    "aliases": []
   }
 ]
