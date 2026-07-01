@@ -2,98 +2,98 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://docs.stakater.com/template-operator-docs/feat-reorganize-docs/index.html</loc>
-         <lastmod>2026-06-30</lastmod>
+         <lastmod>2026-07-01</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/template-operator-docs/feat-reorganize-docs/eula.html</loc>
-         <lastmod>2026-06-30</lastmod>
+         <lastmod>2026-07-01</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/template-operator-docs/feat-reorganize-docs/release-notes.html</loc>
-         <lastmod>2026-06-30</lastmod>
+         <lastmod>2026-07-01</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/template-operator-docs/feat-reorganize-docs/troubleshooting.html</loc>
-         <lastmod>2026-06-30</lastmod>
+         <lastmod>2026-07-01</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/template-operator-docs/feat-reorganize-docs/concepts/architecture.html</loc>
-         <lastmod>2026-06-30</lastmod>
+         <lastmod>2026-07-01</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/template-operator-docs/feat-reorganize-docs/concepts/terminology.html</loc>
-         <lastmod>2026-06-30</lastmod>
+         <lastmod>2026-07-01</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/template-operator-docs/feat-reorganize-docs/concepts/templates/cluster-template-instance.html</loc>
-         <lastmod>2026-06-30</lastmod>
+         <lastmod>2026-07-01</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/template-operator-docs/feat-reorganize-docs/concepts/templates/template-instance.html</loc>
-         <lastmod>2026-06-30</lastmod>
+         <lastmod>2026-07-01</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/template-operator-docs/feat-reorganize-docs/concepts/templates/template.html</loc>
-         <lastmod>2026-06-30</lastmod>
+         <lastmod>2026-07-01</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/template-operator-docs/feat-reorganize-docs/getting-started/installation/kubernetes.html</loc>
-         <lastmod>2026-06-30</lastmod>
+         <lastmod>2026-07-01</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/template-operator-docs/feat-reorganize-docs/getting-started/installation/openshift.html</loc>
-         <lastmod>2026-06-30</lastmod>
+         <lastmod>2026-07-01</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/template-operator-docs/feat-reorganize-docs/getting-started/installation/overview.html</loc>
-         <lastmod>2026-06-30</lastmod>
+         <lastmod>2026-07-01</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/template-operator-docs/feat-reorganize-docs/guides/templates/copying-resources-2.html</loc>
-         <lastmod>2026-06-30</lastmod>
+         <lastmod>2026-07-01</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/template-operator-docs/feat-reorganize-docs/guides/templates/copying-resources.html</loc>
-         <lastmod>2026-06-30</lastmod>
+         <lastmod>2026-07-01</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/template-operator-docs/feat-reorganize-docs/guides/templates/deploying-private-helm-charts.html</loc>
-         <lastmod>2026-06-30</lastmod>
+         <lastmod>2026-07-01</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/template-operator-docs/feat-reorganize-docs/guides/templates/deploying-templates.html</loc>
-         <lastmod>2026-06-30</lastmod>
+         <lastmod>2026-07-01</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/template-operator-docs/feat-reorganize-docs/guides/templates/distributing-manifests.html</loc>
-         <lastmod>2026-06-30</lastmod>
+         <lastmod>2026-07-01</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/template-operator-docs/feat-reorganize-docs/guides/templates/distributing-secrets-using-sealed-secret-template.html</loc>
-         <lastmod>2026-06-30</lastmod>
+         <lastmod>2026-07-01</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/template-operator-docs/feat-reorganize-docs/guides/templates/resource-sync-by-tgi.html</loc>
-         <lastmod>2026-06-30</lastmod>
+         <lastmod>2026-07-01</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/template-operator-docs/feat-reorganize-docs/guides/templates/template-default-params.html</loc>
-         <lastmod>2026-06-30</lastmod>
+         <lastmod>2026-07-01</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/template-operator-docs/feat-reorganize-docs/overview/key-features.html</loc>
-         <lastmod>2026-06-30</lastmod>
+         <lastmod>2026-07-01</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/template-operator-docs/feat-reorganize-docs/overview/use-cases.html</loc>
-         <lastmod>2026-06-30</lastmod>
+         <lastmod>2026-07-01</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/template-operator-docs/feat-reorganize-docs/reference/api.html</loc>
-         <lastmod>2026-06-30</lastmod>
+         <lastmod>2026-07-01</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/template-operator-docs/feat-reorganize-docs/reference/metrics.html</loc>
-         <lastmod>2026-06-30</lastmod>
+         <lastmod>2026-07-01</lastmod>
     </url>
 </urlset>
