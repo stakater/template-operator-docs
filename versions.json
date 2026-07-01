@@ -72,13 +72,13 @@
   {
     "version": "feat-reorganize-docs",
     "title": "feat-reorganize-docs",
-    "aliases": [
-      "latest"
-    ]
+    "aliases": []
   },
   {
     "version": "feat-docs-generation-action",
     "title": "feat-docs-generation-action",
-    "aliases": []
+    "aliases": [
+      "latest"
+    ]
   }
 ]
