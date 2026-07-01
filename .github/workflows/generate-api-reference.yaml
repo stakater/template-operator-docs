@@ -16,7 +16,7 @@ on:
 
 jobs:
   generate:
-    uses: stakater/.github/.github/workflows/generate-api-reference.yaml@feat/docs-generation-action
+    uses: stakater/.github/.github/workflows/generate-api-reference.yaml@feat/api-gen-workflow
     with:
       operator_repo: https://github.com/stakater-ab/template-operator.git
       operator_ref: ${{ github.event.inputs.operator_ref }}
