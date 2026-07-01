@@ -73,12 +73,5 @@
     "version": "feat-reorganize-docs",
     "title": "feat-reorganize-docs",
     "aliases": []
-  },
-  {
-    "version": "feat-docs-generation-action",
-    "title": "feat-docs-generation-action",
-    "aliases": [
-      "latest"
-    ]
   }
 ]
