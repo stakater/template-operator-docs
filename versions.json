@@ -32,7 +32,9 @@
   {
     "version": "renovate-main-stakater-vale-package-0.x",
     "title": "renovate-main-stakater-vale-package-0.x",
-    "aliases": []
+    "aliases": [
+      "latest"
+    ]
   },
   {
     "version": "renovate-main-stakater-.github-0.x",
@@ -72,9 +74,7 @@
   {
     "version": "feat-reorganize-docs",
     "title": "feat-reorganize-docs",
-    "aliases": [
-      "latest"
-    ]
+    "aliases": []
   },
   {
     "version": "chore-regenerate-api-reference",
