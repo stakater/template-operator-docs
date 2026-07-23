@@ -7,9 +7,7 @@
   {
     "version": "renovate-0.1-stakater-.github-0.x",
     "title": "renovate-0.1-stakater-.github-0.x",
-    "aliases": [
-      "latest"
-    ]
+    "aliases": []
   },
   {
     "version": "renovate-0.1-python-3.x",
@@ -89,6 +87,8 @@
   {
     "version": "add-redirects",
     "title": "add-redirects",
-    "aliases": []
+    "aliases": [
+      "latest"
+    ]
   }
 ]
