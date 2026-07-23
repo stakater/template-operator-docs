@@ -83,12 +83,5 @@
     "version": "chore-regenerate-api-reference",
     "title": "chore-regenerate-api-reference",
     "aliases": []
-  },
-  {
-    "version": "add-redirects",
-    "title": "add-redirects",
-    "aliases": [
-      "latest"
-    ]
   }
 ]
