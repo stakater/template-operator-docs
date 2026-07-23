@@ -2,98 +2,98 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://docs.stakater.com/template-operator-docs/renovate-main-stakater-vale-package-0.x/index.html</loc>
-         <lastmod>2026-07-16</lastmod>
+         <lastmod>2026-07-23</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/template-operator-docs/renovate-main-stakater-vale-package-0.x/eula.html</loc>
-         <lastmod>2026-07-16</lastmod>
+         <lastmod>2026-07-23</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/template-operator-docs/renovate-main-stakater-vale-package-0.x/release-notes.html</loc>
-         <lastmod>2026-07-16</lastmod>
+         <lastmod>2026-07-23</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/template-operator-docs/renovate-main-stakater-vale-package-0.x/troubleshooting.html</loc>
-         <lastmod>2026-07-16</lastmod>
+         <lastmod>2026-07-23</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/template-operator-docs/renovate-main-stakater-vale-package-0.x/concepts/architecture.html</loc>
-         <lastmod>2026-07-16</lastmod>
+         <lastmod>2026-07-23</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/template-operator-docs/renovate-main-stakater-vale-package-0.x/concepts/terminology.html</loc>
-         <lastmod>2026-07-16</lastmod>
+         <lastmod>2026-07-23</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/template-operator-docs/renovate-main-stakater-vale-package-0.x/concepts/templates/cluster-template-instance.html</loc>
-         <lastmod>2026-07-16</lastmod>
+         <lastmod>2026-07-23</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/template-operator-docs/renovate-main-stakater-vale-package-0.x/concepts/templates/template-instance.html</loc>
-         <lastmod>2026-07-16</lastmod>
+         <lastmod>2026-07-23</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/template-operator-docs/renovate-main-stakater-vale-package-0.x/concepts/templates/template.html</loc>
-         <lastmod>2026-07-16</lastmod>
+         <lastmod>2026-07-23</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/template-operator-docs/renovate-main-stakater-vale-package-0.x/getting-started/installation/kubernetes.html</loc>
-         <lastmod>2026-07-16</lastmod>
+         <lastmod>2026-07-23</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/template-operator-docs/renovate-main-stakater-vale-package-0.x/getting-started/installation/openshift.html</loc>
-         <lastmod>2026-07-16</lastmod>
+         <lastmod>2026-07-23</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/template-operator-docs/renovate-main-stakater-vale-package-0.x/getting-started/installation/overview.html</loc>
-         <lastmod>2026-07-16</lastmod>
+         <lastmod>2026-07-23</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/template-operator-docs/renovate-main-stakater-vale-package-0.x/guides/templates/copying-resources-2.html</loc>
-         <lastmod>2026-07-16</lastmod>
+         <lastmod>2026-07-23</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/template-operator-docs/renovate-main-stakater-vale-package-0.x/guides/templates/copying-resources.html</loc>
-         <lastmod>2026-07-16</lastmod>
+         <lastmod>2026-07-23</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/template-operator-docs/renovate-main-stakater-vale-package-0.x/guides/templates/deploying-private-helm-charts.html</loc>
-         <lastmod>2026-07-16</lastmod>
+         <lastmod>2026-07-23</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/template-operator-docs/renovate-main-stakater-vale-package-0.x/guides/templates/deploying-templates.html</loc>
-         <lastmod>2026-07-16</lastmod>
+         <lastmod>2026-07-23</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/template-operator-docs/renovate-main-stakater-vale-package-0.x/guides/templates/distributing-manifests.html</loc>
-         <lastmod>2026-07-16</lastmod>
+         <lastmod>2026-07-23</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/template-operator-docs/renovate-main-stakater-vale-package-0.x/guides/templates/distributing-secrets-using-sealed-secret-template.html</loc>
-         <lastmod>2026-07-16</lastmod>
+         <lastmod>2026-07-23</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/template-operator-docs/renovate-main-stakater-vale-package-0.x/guides/templates/resource-sync-by-tgi.html</loc>
-         <lastmod>2026-07-16</lastmod>
+         <lastmod>2026-07-23</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/template-operator-docs/renovate-main-stakater-vale-package-0.x/guides/templates/template-default-params.html</loc>
-         <lastmod>2026-07-16</lastmod>
+         <lastmod>2026-07-23</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/template-operator-docs/renovate-main-stakater-vale-package-0.x/overview/key-features.html</loc>
-         <lastmod>2026-07-16</lastmod>
+         <lastmod>2026-07-23</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/template-operator-docs/renovate-main-stakater-vale-package-0.x/overview/use-cases.html</loc>
-         <lastmod>2026-07-16</lastmod>
+         <lastmod>2026-07-23</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/template-operator-docs/renovate-main-stakater-vale-package-0.x/reference/api.html</loc>
-         <lastmod>2026-07-16</lastmod>
+         <lastmod>2026-07-23</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/template-operator-docs/renovate-main-stakater-vale-package-0.x/reference/metrics.html</loc>
-         <lastmod>2026-07-16</lastmod>
+         <lastmod>2026-07-23</lastmod>
     </url>
 </urlset>
