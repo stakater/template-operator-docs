@@ -57,3 +57,8 @@ The remaining fields are working state rather than something to act on. `templat
 | `ErrorMappingResources` | A Secret or ConfigMap named in `resourceMappings` could not be read or copied |
 
 Two related errors surface at admission time rather than in status, because the webhook rejects the request outright: referencing a template that does not exist when creating or updating an instance, and deleting a `Template` while any instance still references it.
+
+## Related guides
+
+- [Distributing Resources in Namespaces](../../guides/templates/deploying-templates.md)
+- [Copying Secrets and ConfigMaps across Tenant Namespaces via TGI](../../guides/templates/copying-resources-2.md)

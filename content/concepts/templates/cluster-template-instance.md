@@ -71,3 +71,10 @@ Overall progress is reported through `status.conditions` rather than a single st
 Use a `TemplateInstance` when a namespace owner should decide what lands in their own namespace, and the set of namespaces is not the point. Use a `ClusterTemplateInstance` when a platform team is enforcing something across a group of namespaces defined by labels, particularly when namespaces are created and removed regularly and each one should pick up the template without anyone acting.
 
 The two can be used against the same template. A template is only a definition, and nothing stops one being consumed both ways.
+
+## Related guides
+
+- [Sync Resources Deployed by ClusterTemplateInstance](../../guides/templates/resource-sync-by-tgi.md)
+- [Propagate Secrets from Parent to Descendant namespaces](../../guides/templates/copying-resources.md)
+- [Deploying Private Helm Chart to Multiple Namespaces](../../guides/templates/deploying-private-helm-charts.md)
+- [Distributing Secrets Using Sealed Secrets Template](../../guides/templates/distributing-secrets-using-sealed-secret-template.md)

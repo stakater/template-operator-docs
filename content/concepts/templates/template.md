@@ -216,3 +216,10 @@ data:
 ```
 
 This is needed for config files and scripts that use the same syntax for their own variables.
+
+## Related guides
+
+- [Distributing Resources in Namespaces](../../guides/templates/deploying-templates.md)
+- [Using Templates with Default Parameters](../../guides/templates/template-default-params.md)
+- [Deploying Private Helm Chart to Multiple Namespaces](../../guides/templates/deploying-private-helm-charts.md)
+- [Distributing Secrets Using Sealed Secrets Template](../../guides/templates/distributing-secrets-using-sealed-secret-template.md)
