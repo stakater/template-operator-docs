@@ -16,7 +16,7 @@ spec:
       value: "172.17.0.0/16"
 ```
 
-`spec.template` names a cluster-scoped `Template`. There is no namespace component, since templates are not namespaced. The API treats this field as immutable: to point a workload at a different template, delete the instance and create a new one rather than editing it in place.
+`spec.template` names a cluster-scoped `Template`. There is no namespace component, since templates are cluster-scoped. The API treats this field as immutable: to point a workload at a different template, delete the instance and create a new one rather than editing it in place.
 
 Parameters listed under `spec.parameters` override the defaults declared on the template. The template must declare every parameter the instance sets, otherwise the deployment fails. See [Parameters](template.md#parameters) for resolution order and the predefined values available.
 
@@ -36,9 +36,9 @@ This applies to resource mappings too. The controller does watch the source Secr
 
 ## Ownership and deletion
 
-Namespaced resources rendered by a `TemplateInstance` are given the instance as their controller owner, so deleting the instance removes them through ordinary garbage collection.
+Namespace-scoped resources rendered by a `TemplateInstance` are given the instance as their controller owner, so deleting the instance removes them through ordinary garbage collection.
 
-Cluster-scoped resources are the exception. A namespaced object cannot own a cluster-scoped one, so those are owned by the `Template` instead. A `ClusterRole` created through a `TemplateInstance` therefore outlives the instance and is removed only when the template is deleted.
+Cluster-scoped resources are the exception. A namespace-scoped object cannot own a cluster-scoped one, so those are owned by the `Template` instead. A `ClusterRole` created through a `TemplateInstance` therefore outlives the instance and is removed only when the template is deleted.
 
 ## Status
 

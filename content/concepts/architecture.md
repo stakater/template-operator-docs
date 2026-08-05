@@ -39,10 +39,10 @@ Cleanup runs through Kubernetes garbage collection rather than through the opera
 
 | Rendered resource | Owner set by `TemplateInstance` | Owner set by `ClusterTemplateInstance` |
 | --- | --- | --- |
-| Namespaced | The instance | The instance |
+| Namespace-scoped | The instance | The instance |
 | Cluster-scoped | The `Template` | The instance |
 
-A namespaced resource cannot own a cluster-scoped one, so a `TemplateInstance` that renders something cluster-scoped, a `ClusterRole` for example, falls back to making the `Template` the owner. The resource then survives deletion of the instance and is collected only when the template itself is deleted. This is deliberate, as the alternative would be a resource nothing ever cleans up.
+A namespace-scoped resource cannot own a cluster-scoped one, so a `TemplateInstance` that renders something cluster-scoped, a `ClusterRole` for example, falls back to making the `Template` the owner. The resource then survives deletion of the instance and is collected only when the template itself is deleted. This is deliberate, as the alternative would be a resource nothing ever cleans up.
 
 `ClusterTemplateInstance` cannot rely on garbage collection alone, because it writes into namespaces it does not own. It records every namespace it has deployed to in `status.deployedNamespaces` and compares that list against the current selector match on each reconcile, removing resources from namespaces that no longer match.
 

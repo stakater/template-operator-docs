@@ -56,7 +56,7 @@ Cleanup of namespaces that stopped matching runs regardless of the `sync` settin
 
 ## Ownership and deletion
 
-Because a `ClusterTemplateInstance` is itself cluster-scoped, it can own everything it renders, both namespaced and cluster-scoped resources. Deleting the instance removes all of them through garbage collection. This is the one respect in which it is simpler than `TemplateInstance`, where cluster-scoped resources have to fall back to the `Template` as owner.
+Because a `ClusterTemplateInstance` is itself cluster-scoped, it can own everything it renders, both namespace-scoped and cluster-scoped resources. Deleting the instance removes all of them through garbage collection. This is the one respect in which it is simpler than `TemplateInstance`, where cluster-scoped resources have to fall back to the `Template` as owner.
 
 Deleting the referenced `Template` is rejected by the admission webhook while the instance still exists.
 
