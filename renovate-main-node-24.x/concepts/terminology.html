@@ -22,7 +22,7 @@
     
     
       
-        <title>Concepts - Template Operator</title>
+        <title>Terminology - Template Operator</title>
       
     
     
@@ -95,7 +95,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#concepts" class="md-skip">
+        <a href="#terminology" class="md-skip">
           Skip to content
         </a>
       
@@ -2249,7 +2249,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   <span class="md-ellipsis">
     
   
-    Concepts
+    Terminology
   
 
     
@@ -2267,7 +2267,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   <span class="md-ellipsis">
     
   
-    Concepts
+    Terminology
   
 
     
@@ -2306,10 +2306,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#template-instance-ti" class="md-nav__link">
+  <a href="#instance" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Template Instance (TI)
+        Instance
       
     </span>
   </a>
@@ -2317,10 +2317,76 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#cluster-template-instance-cti" class="md-nav__link">
+  <a href="#target-namespace" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Cluster Template Instance (CTI)
+        Target namespace
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parameter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameter
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#predefined-parameter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Predefined parameter
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#expression-parameter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Expression parameter
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resource-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resource mapping
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sync" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sync
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#templategroupinstance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TemplateGroupInstance
       
     </span>
   </a>
@@ -3239,10 +3305,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#template-instance-ti" class="md-nav__link">
+  <a href="#instance" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Template Instance (TI)
+        Instance
       
     </span>
   </a>
@@ -3250,10 +3316,76 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#cluster-template-instance-cti" class="md-nav__link">
+  <a href="#target-namespace" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Cluster Template Instance (CTI)
+        Target namespace
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parameter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameter
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#predefined-parameter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Predefined parameter
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#expression-parameter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Expression parameter
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resource-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resource mapping
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sync" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sync
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#templategroupinstance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TemplateGroupInstance
       
     </span>
   </a>
@@ -3280,14 +3412,26 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 
 
-<h1 id="concepts">Concepts<a class="headerlink" href="#concepts" title="Permanent link">#</a></h1>
-<p>Here are the key concepts of Template Operator:</p>
+<h1 id="terminology">Terminology<a class="headerlink" href="#terminology" title="Permanent link">#</a></h1>
+<p>Terms used throughout the Template Operator documentation.</p>
 <h2 id="template">Template<a class="headerlink" href="#template" title="Permanent link">#</a></h2>
-<p>A <strong>Template</strong> is a reusable blueprint in Template Operator that defines configurations for Kubernetes resources. It supports raw manifests, gotemplate based inline manifests, Helm charts, or resource mappings, enabling standardization and automation across multiple tenants.</p>
-<h2 id="template-instance-ti">Template Instance (TI)<a class="headerlink" href="#template-instance-ti" title="Permanent link">#</a></h2>
-<p>A <strong>Template Instance</strong> is a concrete implementation of a <strong>Template</strong>, created with specific parameters tailored for a particular tenant or use case. It generates actual Kubernetes resources based on the defined template.</p>
-<h2 id="cluster-template-instance-cti">Cluster Template Instance (CTI)<a class="headerlink" href="#cluster-template-instance-cti" title="Permanent link">#</a></h2>
-<p>A <strong>Cluster Template Instance</strong> works on a particular set of namespaces based on the mentioned labels, taking <strong>Template</strong> as a reference for the resources to be deployed. It simplifies managing multiple interdependent resources for complex tenant setups.</p>
+<p>A cluster-scoped resource holding the definitions to distribute. A <code>Template</code> describes what to create, not where to create it, and on its own it deploys nothing. Definitions come from one of four sources: raw <code>manifests</code>, a <code>helm</code> chart, an inline <code>gotemplate</code>, or <code>resourceMappings</code> that copy existing Secrets and ConfigMaps.</p>
+<h2 id="instance">Instance<a class="headerlink" href="#instance" title="Permanent link">#</a></h2>
+<p>A resource that applies a <code>Template</code> somewhere. Template Operator has two: <code>TemplateInstance</code> for a single namespace, and <code>ClusterTemplateInstance</code> for every namespace matching a label selector. Both reference a template by name in <code>spec.template</code>.</p>
+<h2 id="target-namespace">Target namespace<a class="headerlink" href="#target-namespace" title="Permanent link">#</a></h2>
+<p>The namespace an instance renders into. For a <code>TemplateInstance</code> this is its own namespace. For a <code>ClusterTemplateInstance</code> there is one target namespace per selector match, and the template is rendered separately for each, so parameters resolved from namespace metadata can differ between them.</p>
+<h2 id="parameter">Parameter<a class="headerlink" href="#parameter" title="Permanent link">#</a></h2>
+<p>A named value substituted into a template at render time, referenced as <code>${NAME}</code>. A <code>Template</code> declares its parameters and may give each a default, mark it <code>required</code>, or constrain it with a <code>validation</code> regular expression. Instances supply values for those parameters. An instance cannot introduce a parameter the template does not declare.</p>
+<h2 id="predefined-parameter">Predefined parameter<a class="headerlink" href="#predefined-parameter" title="Permanent link">#</a></h2>
+<p>A parameter resolved by the operator from the target namespace rather than declared in the template, such as <code>${NAMESPACE}</code> or <code>${TENANT}</code>. See <a href="templates/template.html#parameters">Template</a> for the full list.</p>
+<h2 id="expression-parameter">Expression parameter<a class="headerlink" href="#expression-parameter" title="Permanent link">#</a></h2>
+<p>A substitution written <code>${{NAME}}</code> instead of <code>${NAME}</code>. The replacement is parsed as YAML, so the field receives a number, boolean, list, or map rather than a string. See <a href="templates/template.html#strings-and-expressions">Template</a>.</p>
+<h2 id="resource-mapping">Resource mapping<a class="headerlink" href="#resource-mapping" title="Permanent link">#</a></h2>
+<p>A template that copies existing Secrets and ConfigMaps from a source namespace into target namespaces, instead of defining new resources. The operator watches the sources, so later changes to them reach the copies.</p>
+<h2 id="sync">Sync<a class="headerlink" href="#sync" title="Permanent link">#</a></h2>
+<p>The <code>spec.sync</code> field on an instance. When false, the instance renders once and is then left alone, even if the template changes. When true, the operator keeps the deployed resources aligned with the template. See <a href="templates/template-instance.html#sync">TemplateInstance</a>.</p>
+<h2 id="templategroupinstance">TemplateGroupInstance<a class="headerlink" href="#templategroupinstance" title="Permanent link">#</a></h2>
+<p>The predecessor of <code>ClusterTemplateInstance</code>, part of the legacy <code>tenantoperator.stakater.com/v1alpha1</code> API group that Template Operator still serves for migration. New work should use <code>ClusterTemplateInstance</code>.</p>
 
 
 
