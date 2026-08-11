@@ -1,30 +1,28 @@
 # Template
 
-Templates are used to initialize Namespaces, share common resources across namespaces, and map secrets/ConfigMaps from one namespace to other namespaces.
+A `Template` holds the resource definitions you want to distribute. It is cluster-scoped and inert on its own: nothing is created until a [TemplateInstance](template-instance.md) or [ClusterTemplateInstance](cluster-template-instance.md) references it and supplies a target.
 
-They can contain pre-defined parameters such as `${namespace}`/`${tenant}`.
+Typical uses are initializing new namespaces with a baseline set of resources, sharing common resources across namespaces, and copying Secrets or ConfigMaps from one namespace into others.
 
-Also, you can define custom variables in `Template`, `TemplateInstance` and `ClusterTemplateInstance`. The parameters defined in `Templates` are overwritten the values defined in `TemplateInstance` and `ClusterTemplateInstance`.
+!!! note
+    `resources` and `parameters` are top-level fields on a `Template`, siblings of `metadata`, not children of `spec`. The `spec` field exists but carries nothing.
 
-## Specification
+For the complete field listing, see the [API Reference](../../reference/api.md).
 
-`Template` Custom Resource (CR) supports four key methods for defining and managing resources: `manifests`, `helm`, `gotemplate`, and `resource mapping`. Let’s dive into each method, their differences, and their use cases:
+## Resource sources
 
-### 1. Manifests
+A `Template` supplies its definitions through one of four fields: `manifests`, `helm`, `gotemplate`, or `resourceMappings`. They differ in how much templating logic they support and whether they create resources or copy existing ones.
 
-This approach uses raw Kubernetes manifests (YAML files) that specify resources directly in the template.
+| Field | Creates | Best for |
+| --- | --- | --- |
+| `manifests` | New resources from inline YAML | Static or lightly parameterized resources |
+| `helm` | New resources rendered from a chart | Interdependent resources, or packaging that already exists as a chart |
+| `gotemplate` | New resources from an inline Go template | Dynamic output where a full chart is more than you need |
+| `resourceMappings` | Copies of existing Secrets and ConfigMaps | Sharing a resource that is already maintained elsewhere |
 
-#### How It Works
+### Manifests
 
-* The template includes the actual YAML specifications of resources like `Deployment`, `Service`, `ConfigMap`, etc.
-* These manifests are applied as-is or with minor parameter substitutions (e.g., dynamically populated `{tenant}` and `{namespace}` variables wherever added or user defined parameters).
-
-#### Use Cases
-
-* Best for straightforward and simple resources where you don't need advanced templating logic or dependency management.
-* Ideal when the resource definitions are static or have minimal customization needs.
-
-#### Example
+Raw Kubernetes manifests written inline. They are applied as given, with parameter substitution applied first.
 
 ```yaml
 apiVersion: templates.stakater.com/v1alpha1
@@ -71,23 +69,9 @@ resources:
             port: 5978
 ```
 
-### 2. Helm
+### Helm
 
-This method integrates Helm charts into the template, allowing you to leverage Helm's templating capabilities and package management.
-
-#### How It Works
-
-* The `Template` references a Helm chart.
-* Values for the Helm chart can be passed by the `values` field.
-* The Helm chart generates the necessary Kubernetes resources dynamically at runtime.
-
-#### Use Cases
-
-* Best for complex resource setups with interdependencies (e.g., a microservice with a Deployment, Service, Ingress, and ConfigMap).
-* Useful for resources requiring advanced templating logic or modular packaging.
-* Great for managing third-party tools or applications (e.g., deploying Prometheus, Keycloak, or databases).
-
-#### Example
+References a chart from a repository and renders it at deploy time. Values can be passed as a block through `values`, or individually through `setValues`.
 
 ```yaml
 apiVersion: templates.stakater.com/v1alpha1
@@ -118,45 +102,11 @@ resources:
       redisPort: 6379
 ```
 
-A brief explanation of the fields in the Helm section:
+`releaseName` defaults to the template name if omitted. Private repositories are supported by pointing `username` and `password` at keys in an existing Secret. Each entry in `setValues` maps to a `--set` argument, or `--set-string` when `forceString` is true.
 
-* `releaseName`: The name of the Helm release.
-* `chart`: The Helm chart details.
-    * `repository`: The Helm repository details.
-        * `name`: The name of the Helm repository.
-        * `version`: The version of the Helm chart.
-        * `repoUrl`: The URL of the Helm repository.
-    * `username`: A reference to the secret containing the username for the Helm repository in case the chart is in a private repository.
-        * `key`: The key in the secret containing the username.
-        * `name`: The name of the secret containing the username.
-        * `namespace`: The namespace of the secret containing the username.
-    * `password`: A reference to the secret containing the password for the Helm repository in case the chart is in a private repository.
-        * `key`: The key in the secret containing the password.
-        * `name`: The name of the secret containing the password.
-        * `namespace`: The namespace of the secret containing the password.
-* `setValues`: The values to set in the Helm chart.
-    * `name`: The name of the value.
-    * `value`: The value to set.
-    * `forceString`: Whether to use `--set` or `--set-string` when setting the value. Default is `false` (use `--set`).
-* `values`: The values file for the Helm chart.
+### GoTemplate
 
-### 3. GoTemplate
-
-This method uses inline Go templates to dynamically generate Kubernetes manifests. It leverages Go's [text/template](https://pkg.go.dev/text/template) syntax along with [Sprig functions](https://masterminds.github.io/sprig/) for string operations, date formatting, conditionals, arithmetic, and more.
-
-#### How It Works
-
-* The `gotemplate` section contains YAML written with Go template expressions such as `{{ .Name }}` or `{{ now | date "2006-01-02" }}`.
-* Template `parameters` are injected at runtime, and Sprig functions can be used to transform or compute values.
-* The rendered output must be valid Kubernetes YAML, which the operator then applies to the target namespaces.
-
-#### Use Cases
-
-* Ideal for dynamic resource generation without maintaining a full Helm chart.
-* Useful when you need lightweight templating with conditional or computed fields.
-* Suitable for resources that change based on tenant, namespace, or environment attributes.
-
-#### Example
+An inline Go template, using [text/template](https://pkg.go.dev/text/template) syntax with [Sprig functions](https://masterminds.github.io/sprig/) available. Template parameters are exposed as fields on the render context, so `${NAME}` in the other sources is written `{{ .NAME }}` here. The rendered output must be valid Kubernetes YAML.
 
 ```yaml
 apiVersion: templates.stakater.com/v1alpha1
@@ -182,20 +132,9 @@ resources:
       configVersion: "{{ now | date "2006-01-02" }}"
 ```
 
-### 4. Resource Mapping
+### Resource mapping
 
-This approach maps secrets and ConfigMaps from one tenant's namespace to another tenant's namespace, or within a tenant's namespace.
-
-#### How It Works
-
-* The template contains mappings to pre-existing resources (secrets and ConfigMaps only).
-
-#### Use Cases
-
-* Ideal for maintaining consistency across shared resources without duplicating definitions.
-* Best when resources already exist.
-
-#### Example
+Copies Secrets and ConfigMaps that already exist somewhere in the cluster into the target namespaces. Only these two kinds are supported. The operator watches the source resources, so an update to a source is propagated to the copies.
 
 ```yaml
 apiVersion: templates.stakater.com/v1alpha1
@@ -211,3 +150,76 @@ resources:
       - name: configmap-c1
         namespace: namespace-n2
 ```
+
+## Parameters
+
+Parameters let one template serve several namespaces or tenants. A template declares the parameters it accepts, and an instance supplies values for them.
+
+```yaml
+apiVersion: templates.stakater.com/v1alpha1
+kind: Template
+metadata:
+  name: app-config
+parameters:
+  - name: CIDR_IP
+    value: "172.17.0.0/16"
+  - name: REPLICAS
+    required: true
+    validation: "^[0-9]+$"
+```
+
+`value` is the default used when an instance does not supply one. A parameter marked `required` must be supplied by the instance. A `validation` pattern is a regular expression checked against the value the instance supplies.
+
+!!! note
+    An instance may only set parameters the template declares. Passing an undeclared name fails the deployment with `parameter <name> does not exist in template <template>`, which catches typos rather than letting them silently render as empty.
+
+### Resolution order
+
+A reference is resolved by taking the first match in this order:
+
+1. Predefined parameters, resolved from the target namespace.
+1. The value set on the instance.
+1. The default `value` on the template.
+1. No match, in which case the reference is left in the output verbatim as `${NAME}`.
+
+The last case is worth remembering when a rendered resource contains a literal `${SOMETHING}`: the name was never declared as a parameter.
+
+### Predefined parameters
+
+These are resolved by the operator from the target namespace, so they do not need to be declared. Names are matched case-insensitively.
+
+| Reference | Resolves to |
+| --- | --- |
+| `${NAMESPACE}` | Name of the namespace being rendered into |
+| `${TENANT}` | Name of the tenant owning that namespace |
+| `${namespace.metadata.labels.<key>}` | Value of the given label on the target namespace |
+| `${namespace.metadata.annotations.<key>}` | Value of the given annotation on the target namespace |
+
+`${TENANT}` requires Multi Tenant Operator, since it reads the tenant label the `Tenant` resource puts on the namespace. It fails if the namespace is not owned by a tenant. The label and annotation forms fail if the key is absent, rather than rendering an empty value.
+
+### Strings and expressions
+
+`${NAME}` substitutes into a string. `${{NAME}}` is an expression: the replacement is parsed as YAML, so the field receives a typed value.
+
+```yaml
+replicas: ${{REPLICA_COUNT}}     # renders as the number 3
+tier: "${TIER_NAME}"             # renders as the string "gold"
+```
+
+The distinction matters where Kubernetes expects a non-string. Writing `replicas: "${REPLICA_COUNT}"` produces a quoted string and the resource is rejected. Expression form applies only when the whole value is exactly `${{NAME}}`, so it cannot be used for part of a longer string.
+
+To emit a literal `${NAME}` without substitution, double the dollar sign:
+
+```yaml
+data:
+  shellSnippet: "echo $${HOME}"  # renders as: echo ${HOME}
+```
+
+This is needed for config files and scripts that use the same syntax for their own variables.
+
+## Related guides
+
+- [Distributing Resources in Namespaces](../../guides/templates/deploying-templates.md)
+- [Using Templates with Default Parameters](../../guides/templates/template-default-params.md)
+- [Deploying Private Helm Chart to Multiple Namespaces](../../guides/templates/deploying-private-helm-charts.md)
+- [Distributing Secrets Using Sealed Secrets Template](../../guides/templates/distributing-secrets-using-sealed-secret-template.md)
