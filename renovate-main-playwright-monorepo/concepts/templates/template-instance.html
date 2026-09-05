@@ -2240,7 +2240,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   <span class="md-ellipsis">
     
   
-    Concepts
+    Terminology
   
 
     
@@ -2347,6 +2347,24 @@ This documentation is for a pull request deployment and is unreleased, it is onl
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TemplateInstance
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="template-instance.html" class="md-nav__link md-nav__link--active">
         
   
@@ -2363,6 +2381,82 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 
       </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#sync" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sync
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ownership-and-deletion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ownership and deletion
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Status
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-failures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common failures
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-guides" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related guides
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -3151,6 +3245,69 @@ This documentation is for a pull request deployment and is unreleased, it is onl
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#sync" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sync
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ownership-and-deletion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ownership and deletion
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Status
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-failures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common failures
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-guides" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related guides
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -3170,7 +3327,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 
 
 <h1 id="templateinstance">TemplateInstance<a class="headerlink" href="#templateinstance" title="Permanent link">#</a></h1>
-<p>Namespace scoped resource:</p>
+<p>A <code>TemplateInstance</code> applies a <a href="template.html">Template</a> to the namespace it lives in. It is the namespace-scoped counterpart of <a href="cluster-template-instance.html">ClusterTemplateInstance</a>, and it is the resource to reach for when a team owns a namespace and wants a standard set of resources in it.</p>
 <div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">templates.stakater.com/v1alpha1</span>
 <span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TemplateInstance</span>
 <span class="nt">metadata</span><span class="p">:</span>
@@ -3183,8 +3340,58 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CIDR_IP</span>
 <span class="w">      </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">"172.17.0.0/16"</span>
 </code></pre></div>
-<p>TemplateInstance are used to keep track of resources created from Templates, which are being instantiated inside a Namespace.
-Generally, a TemplateInstance is created from a Template and then the TemplateInstances will not be updated when the Template changes later on. To change this behavior, it is possible to set <code>spec.sync: true</code> in a TemplateInstance. Setting this option, means to keep this TemplateInstance in sync with the underlying template (similar to Helm upgrade).</p>
+<p><code>spec.template</code> names a cluster-scoped <code>Template</code>. There is no namespace component, since templates are cluster-scoped. The API treats this field as immutable: to point a workload at a different template, delete the instance and create a new one rather than editing it in place.</p>
+<p>Parameters listed under <code>spec.parameters</code> override the defaults declared on the template. The template must declare every parameter the instance sets, otherwise the deployment fails. See <a href="template.html#parameters">Parameters</a> for resolution order and the predefined values available.</p>
+<p>For the complete field listing, see the <a href="../../reference/api.html">API Reference</a>.</p>
+<h2 id="sync">Sync<a class="headerlink" href="#sync" title="Permanent link">#</a></h2>
+<p><code>spec.sync</code> decides whether the instance tracks its template after the first deployment.</p>
+<p>With <code>sync</code> left at its default of false, the template is rendered once. Once the instance reports a status, the controller returns early on every later reconcile, so subsequent edits to the template are not picked up. The deployed resources stay as they were first rendered.</p>
+<p>With <code>sync: true</code>, the instance is reconciled whenever its template changes, and the rendered resources are brought back in line. This is comparable to running <code>helm upgrade</code> on every chart change.</p>
+<p>Switching <code>sync</code> on later takes effect immediately. The edit triggers a reconcile, the instance is rendered again, and anything that drifted while sync was off is overwritten at that point rather than at the next template change.</p>
+<p>This applies to resource mappings too. The controller does watch the source Secrets and ConfigMaps and will wake up when they change, but the sync check runs before the mapping work, so a non-syncing instance keeps whatever it copied the first time. Use <code>sync: true</code> on any instance whose mapped resources are expected to track their source.</p>
+<h2 id="ownership-and-deletion">Ownership and deletion<a class="headerlink" href="#ownership-and-deletion" title="Permanent link">#</a></h2>
+<p>Namespace-scoped resources rendered by a <code>TemplateInstance</code> are given the instance as their controller owner, so deleting the instance removes them through ordinary garbage collection.</p>
+<p>Cluster-scoped resources are the exception. A namespace-scoped object cannot own a cluster-scoped one, so those are owned by the <code>Template</code> instead. A <code>ClusterRole</code> created through a <code>TemplateInstance</code> therefore outlives the instance and is removed only when the template is deleted.</p>
+<h2 id="status">Status<a class="headerlink" href="#status" title="Permanent link">#</a></h2>
+<p><code>status.status</code> reports <code>Deployed</code>, <code>Failed</code>, or an empty value while the instance is still pending. On failure, <code>status.reason</code> carries a short CamelCase code and <code>status.message</code> the detail.</p>
+<p>The remaining fields are working state rather than something to act on. <code>templateHash</code> and <code>templateManifests</code> record what was last rendered, which is how the controller ignores template updates that change nothing. <code>mappedSecrets</code> and <code>mappedConfigmaps</code> track each copied resource separately, so one failed mapping is visible without obscuring the others.</p>
+<h2 id="common-failures">Common failures<a class="headerlink" href="#common-failures" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th><code>reason</code></th>
+<th>Cause</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>TemplateNotFound</code></td>
+<td><code>spec.template</code> names a template that does not exist</td>
+</tr>
+<tr>
+<td><code>ErrorReplaceParameters</code></td>
+<td>A parameter could not be resolved, or a value failed the template's <code>validation</code> pattern</td>
+</tr>
+<tr>
+<td><code>ErrorRenderingGoTemplate</code></td>
+<td>The <code>gotemplate</code> body failed to execute</td>
+</tr>
+<tr>
+<td><code>ErrorParsingGoTemplate</code></td>
+<td>The template rendered, but the output was not valid Kubernetes YAML</td>
+</tr>
+<tr>
+<td><code>ErrorMappingResources</code></td>
+<td>A Secret or ConfigMap named in <code>resourceMappings</code> could not be read or copied</td>
+</tr>
+</tbody>
+</table>
+<p>Two related errors surface at admission time rather than in status, because the webhook rejects the request outright: referencing a template that does not exist when creating or updating an instance, and deleting a <code>Template</code> while any instance still references it.</p>
+<h2 id="related-guides">Related guides<a class="headerlink" href="#related-guides" title="Permanent link">#</a></h2>
+<ul>
+<li><a href="../../guides/templates/deploying-templates.html">Distributing Resources in Namespaces</a></li>
+<li><a href="../../guides/templates/copying-resources-2.html">Copying Secrets and ConfigMaps across Tenant Namespaces via TGI</a></li>
+</ul>
 
 
 
