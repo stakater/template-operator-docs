@@ -61,4 +61,5 @@ Two related errors surface at admission time rather than in status, because the 
 ## Related guides
 
 - [Distributing Resources in Namespaces](../../guides/templates/deploying-templates.md)
+- [Removing a Field from a Template](../../guides/templates/removing-fields.md)
 - [Copying Secrets and ConfigMaps across Tenant Namespaces via TGI](../../guides/templates/copying-resources-2.md)
