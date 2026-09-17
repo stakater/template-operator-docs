@@ -19,7 +19,7 @@ _**September 17, 2026**_
 
 #### Enhancements
 
-- Bundled Helm upgraded to `v3.21.2`, which is the version templates render against.
+- Templates are now rendered with Helm `v3.21.2`.
 - Dependency and security updates.
 
 !!! note
