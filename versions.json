@@ -7,9 +7,7 @@
   {
     "version": "renovate-0.1-stakater-vale-package-0.x",
     "title": "renovate-0.1-stakater-vale-package-0.x",
-    "aliases": [
-      "latest"
-    ]
+    "aliases": []
   },
   {
     "version": "renovate-0.1-stakater-.github-0.x",
@@ -89,7 +87,9 @@
   {
     "version": "docs-mto-1.10-changelog",
     "title": "docs-mto-1.10-changelog",
-    "aliases": []
+    "aliases": [
+      "latest"
+    ]
   },
   {
     "version": "chore-regenerate-api-reference",
