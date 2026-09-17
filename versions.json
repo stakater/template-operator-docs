@@ -2,9 +2,7 @@
   {
     "version": "SA-8972_removing-fields-documentation",
     "title": "SA-8972_removing-fields-documentation",
-    "aliases": [
-      "latest"
-    ]
+    "aliases": []
   },
   {
     "version": "renovate-0.1-stakater-vale-package-0.x",
@@ -89,7 +87,9 @@
   {
     "version": "docs-mto-1.10-changelog",
     "title": "docs-mto-1.10-changelog",
-    "aliases": []
+    "aliases": [
+      "latest"
+    ]
   },
   {
     "version": "chore-regenerate-api-reference",
