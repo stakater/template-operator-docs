@@ -19,8 +19,8 @@ _**September 17, 2026**_
 
 #### Enhancements
 
-- Bundled Helm upgraded to `v3.21.2`.
-- Go base images upgraded to 1.25, along with Kubernetes client library and security updates.
+- Bundled Helm upgraded to `v3.21.2`, which is the version templates render against.
+- Dependency and security updates.
 
 !!! note
     v0.1.6 and v0.1.7 are private releases; all their changes ship in v0.1.8.
