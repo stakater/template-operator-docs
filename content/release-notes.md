@@ -6,18 +6,6 @@
 
 _**September 17, 2026**_
 
-Release artifacts only. No functional change over `v0.1.7`.
-
-### v0.1.7
-
-_**September 15, 2026**_
-
-Release workflow fixes. No functional change over `v0.1.6`.
-
-### v0.1.6
-
-_**September 14, 2026**_
-
 #### Features
 
 - `Template` now supports Go template expressions in the template body.
@@ -33,6 +21,17 @@ _**September 14, 2026**_
 
 - Bundled Helm upgraded to `v3.21.2`.
 - Go base images upgraded to 1.25, along with Kubernetes client library and security updates.
+
+!!! note
+    v0.1.6 and v0.1.7 are private releases; all their changes ship in v0.1.8. v0.1.7 is broken and unusable, so upgrade from v0.1.5 straight to v0.1.8.
+
+### v0.1.5
+
+_**August 29, 2025**_
+
+#### Bug Fixes
+
+- Migration no longer sets owner references on the new CRs, and no longer deletes them.
 
 ### v0.1.4
 
