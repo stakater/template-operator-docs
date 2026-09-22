@@ -85,13 +85,6 @@
     "aliases": []
   },
   {
-    "version": "docs-mto-1.10-changelog",
-    "title": "docs-mto-1.10-changelog",
-    "aliases": [
-      "latest"
-    ]
-  },
-  {
     "version": "chore-regenerate-api-reference",
     "title": "chore-regenerate-api-reference",
     "aliases": []
