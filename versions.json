@@ -80,13 +80,6 @@
     "aliases": []
   },
   {
-    "version": "main",
-    "title": "main",
-    "aliases": [
-      "latest"
-    ]
-  },
-  {
     "version": "feat-reorganize-docs",
     "title": "feat-reorganize-docs",
     "aliases": []
