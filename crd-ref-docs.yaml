@@ -1,0 +1,8 @@
+processor:
+  ignoreTypes:
+    - "(TemplateList|TemplateInstanceList|ClusterTemplateInstanceList)$"
+  ignoreFields:
+    - "TypeMeta$"
+
+render:
+  kubernetesVersion: "1.30"

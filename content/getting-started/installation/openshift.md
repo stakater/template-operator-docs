@@ -18,23 +18,23 @@ This document contains instructions on installing, uninstalling and configuring 
 
 * After opening OpenShift console click on `Operators`, followed by `OperatorHub` from the side menu
 
-  ![OperatorHub](../images/operatorhub.png)
+  ![OperatorHub](../../images/operatorhub.png)
 
 * Now search for `Template Operator` and then click on `Template Operator` tile
 
-  ![alt text](../images/template-operator.png)
+  ![alt text](../../images/template-operator.png)
 
 * Click on the `install` button
 
-  ![alt text](../images/operator-details.png)
+  ![alt text](../../images/operator-details.png)
 
 * Keep the `Update Channel` and `Version` dropdowns at the latest versions. Select Operator recommended Namespace in `Installed Namespace` section.
 
-  ![alt text](../images/install-tab.png)
+  ![alt text](../../images/install-tab.png)
 
 * Wait for the operator to be installed
 
-  ![alt text](../images/successful-install.png)
+  ![alt text](../../images/successful-install.png)
 
   > Note: Template Operator will be installed in `template-operator-system` namespace.
 
@@ -84,7 +84,7 @@ This document contains instructions on installing, uninstalling and configuring 
 
 * After creating the `subscription` custom resource, open OpenShift console and click on `Operators`, followed by `Installed Operators` from the side menu and wait for the installation to complete
 
-  ![alt text](../images/wait-for-installation.png)
+  ![alt text](../../images/wait-for-installation.png)
 
 ## Uninstall via OperatorHub UI
 
@@ -92,11 +92,11 @@ You can uninstall Template Operator by following these steps:
 
 * After making the required changes open OpenShift console and click on `Operators`, followed by `Installed Operators` from the side menu
 
-  ![image](../images/wait-for-installation.png)
+  ![image](../../images/wait-for-installation.png)
 
 * Now click on uninstall and confirm uninstall.
 
-  ![alt text](../images/uninstall.png)
+  ![alt text](../../images/uninstall.png)
 
 * Now the operator has been uninstalled.
 

@@ -186,11 +186,11 @@ metadata:
 spec:
   template: namespace-parameterized-restrictions
   sync: true
-parameters:
-  - name: DEFAULT_CPU_LIMIT
-    value: "1.5"
-  - name: DEFAULT_CPU_REQUESTS
-    value: "1"
+  parameters:
+    - name: DEFAULT_CPU_LIMIT
+      value: "1.5"
+    - name: DEFAULT_CPU_REQUESTS
+      value: "1"
 ```
 
 If she wants to distribute the same Template over multiple namespaces, she can use `ClusterTemplateInstance`.
@@ -210,9 +210,9 @@ spec:
       values:
         - alpha
         - beta
-parameters:
-  - name: DEFAULT_CPU_LIMIT
-    value: "1.5"
-  - name: DEFAULT_CPU_REQUESTS
-    value: "1"
+  parameters:
+    - name: DEFAULT_CPU_LIMIT
+      value: "1.5"
+    - name: DEFAULT_CPU_REQUESTS
+      value: "1"
 ```

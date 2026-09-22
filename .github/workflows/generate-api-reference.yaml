@@ -1,0 +1,31 @@
+name: Generate API Reference
+
+# Regenerates content/reference/api.md from the operator's Go types by calling
+# the shared reusable workflow in stakater/.github. Run manually from the
+# Actions tab; it opens a PR with the regenerated reference.
+#
+# Repo-specific config lives in crd-ref-docs.yaml (which types/fields to ignore).
+
+on:
+  workflow_dispatch:
+    inputs:
+      operator_ref:
+        description: "Operator git ref to generate from"
+        required: false
+        default: "main"
+
+jobs:
+  generate:
+    uses: stakater/.github/.github/workflows/generate-api-reference.yaml@main
+    with:
+      operator_repo: https://github.com/stakater-ab/template-operator.git
+      operator_ref: ${{ github.event.inputs.operator_ref }}
+      api_path: api/templates.stakater.com/v1alpha1
+      config_file: crd-ref-docs.yaml
+      output_file: content/reference/api.md
+      # template-operator is under the private stakater-ab org; the shared
+      # workflow configures git auth so the plain HTTPS URL clones with the token.
+      ENABLE_STAKATER_AB_GIT_AUTH: true
+    secrets:
+      PR_TOKEN: ${{ secrets.PUBLISH_TOKEN }}
+      STAKATER_AB_REPOS: ${{ secrets.STAKATER_AB_REPOS }}
