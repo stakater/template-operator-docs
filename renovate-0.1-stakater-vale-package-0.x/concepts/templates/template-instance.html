@@ -5,31 +5,31 @@
       
       
       
-        <link rel="canonical" href="https://docs.stakater.com/template-operator-docs/renovate-0.1-stakater-vale-package-0.x/troubleshooting.html">
+        <link rel="canonical" href="https://docs.stakater.com/template-operator-docs/renovate-0.1-stakater-vale-package-0.x/concepts/templates/template-instance.html">
       
       
-        <link rel="prev" href="reference/metrics.html">
+        <link rel="prev" href="template.html">
       
       
-        <link rel="next" href="release-notes.html">
+        <link rel="next" href="cluster-template-instance.html">
       
       
         
       
       
-      <link rel="icon" href="assets/images/favicon.svg">
+      <link rel="icon" href="../../assets/images/favicon.svg">
       <meta name="generator" content="mkdocs-ProperDocs 1.6.7, mkdocs-material-9.7.7">
     
     
       
-        <title>Troubleshooting - Template Operator</title>
+        <title>TemplateInstance - Template Operator</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -48,9 +48,9 @@
       
     
     
-      <link rel="stylesheet" href="stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -66,7 +66,7 @@
 
     
     
-  <link href="assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
             .gslide-desc { color: #666; user-select: text; }
@@ -95,7 +95,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#troubleshooting-guide" class="md-skip">
+        <a href="#templateinstance" class="md-skip">
           Skip to content
         </a>
       
@@ -340,7 +340,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   <nav class="md-header__inner md-grid" aria-label="Header">
 
     <!-- Link to home -->
-    <a href="." title="Template Operator" class="md-header__button md-logo" aria-label="Template Operator" data-md-component="logo">
+    <a href="../.." title="Template Operator" class="md-header__button md-logo" aria-label="Template Operator" data-md-component="logo">
       <!-- 
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -361,10 +361,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
         <!-- Logo -->
         <div class="md-header__topic">
           
-          <img class="md-header__logo_light" src="assets/images/logo-light.png#only-light" alt="logo">
+          <img class="md-header__logo_light" src="../../assets/images/logo-light.png#only-light" alt="logo">
           
           
-          <img class="md-header__logo_dark" src="assets/images/logo-dark.png#only-dark" alt="logo">
+          <img class="md-header__logo_dark" src="../../assets/images/logo-dark.png#only-dark" alt="logo">
           
           
           <div class="header-site-name">
@@ -1988,7 +1988,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Template Operator" class="md-nav__button md-logo" aria-label="Template Operator" data-md-component="logo">
+    <a href="../.." title="Template Operator" class="md-nav__button md-logo" aria-label="Template Operator" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
@@ -2065,7 +2065,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="index.html" class="md-nav__link">
+      <a href="../../index.html" class="md-nav__link">
         
   
   
@@ -2093,7 +2093,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="overview/key-features.html" class="md-nav__link">
+      <a href="../../overview/key-features.html" class="md-nav__link">
         
   
   
@@ -2121,7 +2121,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="overview/use-cases.html" class="md-nav__link">
+      <a href="../../overview/use-cases.html" class="md-nav__link">
         
   
   
@@ -2153,18 +2153,20 @@ This documentation is for a pull request deployment and is unreleased, it is onl
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked="">
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -2185,7 +2187,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2203,7 +2205,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="concepts/architecture.html" class="md-nav__link">
+      <a href="../architecture.html" class="md-nav__link">
         
   
   
@@ -2231,7 +2233,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="concepts/terminology.html" class="md-nav__link">
+      <a href="../terminology.html" class="md-nav__link">
         
   
   
@@ -2256,18 +2258,20 @@ This documentation is for a pull request deployment and is unreleased, it is onl
                 
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked="">
         
           
           <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
@@ -2288,7 +2292,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2306,7 +2310,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="concepts/templates/template.html" class="md-nav__link">
+      <a href="template.html" class="md-nav__link">
         
   
   
@@ -2331,10 +2335,37 @@ This documentation is for a pull request deployment and is unreleased, it is onl
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="concepts/templates/template-instance.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TemplateInstance
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="template-instance.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -2350,6 +2381,83 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 
       </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#sync" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sync
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ownership-and-deletion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ownership and deletion
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Status
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-failures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common failures
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-guides" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related guides
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2362,7 +2470,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="concepts/templates/cluster-template-instance.html" class="md-nav__link">
+      <a href="cluster-template-instance.html" class="md-nav__link">
         
   
   
@@ -2499,7 +2607,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="getting-started/installation/overview.html" class="md-nav__link">
+      <a href="../../getting-started/installation/overview.html" class="md-nav__link">
         
   
   
@@ -2527,7 +2635,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="getting-started/installation/openshift.html" class="md-nav__link">
+      <a href="../../getting-started/installation/openshift.html" class="md-nav__link">
         
   
   
@@ -2555,7 +2663,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="getting-started/installation/kubernetes.html" class="md-nav__link">
+      <a href="../../getting-started/installation/kubernetes.html" class="md-nav__link">
         
   
   
@@ -2692,7 +2800,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="guides/templates/deploying-templates.html" class="md-nav__link">
+      <a href="../../guides/templates/deploying-templates.html" class="md-nav__link">
         
   
   
@@ -2720,7 +2828,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="guides/templates/distributing-manifests.html" class="md-nav__link">
+      <a href="../../guides/templates/distributing-manifests.html" class="md-nav__link">
         
   
   
@@ -2748,7 +2856,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="guides/templates/copying-resources.html" class="md-nav__link">
+      <a href="../../guides/templates/copying-resources.html" class="md-nav__link">
         
   
   
@@ -2776,7 +2884,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="guides/templates/copying-resources-2.html" class="md-nav__link">
+      <a href="../../guides/templates/copying-resources-2.html" class="md-nav__link">
         
   
   
@@ -2804,7 +2912,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="guides/templates/distributing-secrets-using-sealed-secret-template.html" class="md-nav__link">
+      <a href="../../guides/templates/distributing-secrets-using-sealed-secret-template.html" class="md-nav__link">
         
   
   
@@ -2832,7 +2940,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="guides/templates/deploying-private-helm-charts.html" class="md-nav__link">
+      <a href="../../guides/templates/deploying-private-helm-charts.html" class="md-nav__link">
         
   
   
@@ -2860,7 +2968,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="guides/templates/template-default-params.html" class="md-nav__link">
+      <a href="../../guides/templates/template-default-params.html" class="md-nav__link">
         
   
   
@@ -2888,7 +2996,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="guides/templates/resource-sync-by-tgi.html" class="md-nav__link">
+      <a href="../../guides/templates/resource-sync-by-tgi.html" class="md-nav__link">
         
   
   
@@ -2978,7 +3086,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="reference/api.html" class="md-nav__link">
+      <a href="../../reference/api.html" class="md-nav__link">
         
   
   
@@ -3006,7 +3114,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="reference/metrics.html" class="md-nav__link">
+      <a href="../../reference/metrics.html" class="md-nav__link">
         
   
   
@@ -3038,19 +3146,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="troubleshooting.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../troubleshooting.html" class="md-nav__link">
         
   
   
@@ -3066,7 +3165,6 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 
       </a>
-      
     </li>
   
 
@@ -3078,7 +3176,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="release-notes.html" class="md-nav__link">
+      <a href="../../release-notes.html" class="md-nav__link">
         
   
   
@@ -3105,7 +3203,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="eula.html" class="md-nav__link">
+      <a href="../../eula.html" class="md-nav__link">
         
   
   
@@ -3147,6 +3245,69 @@ This documentation is for a pull request deployment and is unreleased, it is onl
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#sync" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sync
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ownership-and-deletion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ownership and deletion
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Status
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-failures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common failures
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-guides" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related guides
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -3165,7 +3326,72 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 
 
-<h1 id="troubleshooting-guide">Troubleshooting Guide<a class="headerlink" href="#troubleshooting-guide" title="Permanent link">#</a></h1>
+<h1 id="templateinstance">TemplateInstance<a class="headerlink" href="#templateinstance" title="Permanent link">#</a></h1>
+<p>A <code>TemplateInstance</code> applies a <a href="template.html">Template</a> to the namespace it lives in. It is the namespace-scoped counterpart of <a href="cluster-template-instance.html">ClusterTemplateInstance</a>, and it is the resource to reach for when a team owns a namespace and wants a standard set of resources in it.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">templates.stakater.com/v1alpha1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TemplateInstance</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">networkpolicy</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">build</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">template</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">networkpolicy</span>
+<span class="w">  </span><span class="nt">sync</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">parameters</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CIDR_IP</span>
+<span class="w">      </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">"172.17.0.0/16"</span>
+</code></pre></div>
+<p><code>spec.template</code> names a cluster-scoped <code>Template</code>. There is no namespace component, since templates are cluster-scoped. The API treats this field as immutable: to point a workload at a different template, delete the instance and create a new one rather than editing it in place.</p>
+<p>Parameters listed under <code>spec.parameters</code> override the defaults declared on the template. The template must declare every parameter the instance sets, otherwise the deployment fails. See <a href="template.html#parameters">Parameters</a> for resolution order and the predefined values available.</p>
+<p>For the complete field listing, see the <a href="../../reference/api.html">API Reference</a>.</p>
+<h2 id="sync">Sync<a class="headerlink" href="#sync" title="Permanent link">#</a></h2>
+<p><code>spec.sync</code> decides whether the instance tracks its template after the first deployment.</p>
+<p>With <code>sync</code> left at its default of false, the template is rendered once. Once the instance reports a status, the controller returns early on every later reconcile, so subsequent edits to the template are not picked up. The deployed resources stay as they were first rendered.</p>
+<p>With <code>sync: true</code>, the instance is reconciled whenever its template changes, and the rendered resources are brought back in line. This is comparable to running <code>helm upgrade</code> on every chart change.</p>
+<p>Switching <code>sync</code> on later takes effect immediately. The edit triggers a reconcile, the instance is rendered again, and anything that drifted while sync was off is overwritten at that point rather than at the next template change.</p>
+<p>This applies to resource mappings too. The controller does watch the source Secrets and ConfigMaps and will wake up when they change, but the sync check runs before the mapping work, so a non-syncing instance keeps whatever it copied the first time. Use <code>sync: true</code> on any instance whose mapped resources are expected to track their source.</p>
+<h2 id="ownership-and-deletion">Ownership and deletion<a class="headerlink" href="#ownership-and-deletion" title="Permanent link">#</a></h2>
+<p>Namespace-scoped resources rendered by a <code>TemplateInstance</code> are given the instance as their controller owner, so deleting the instance removes them through ordinary garbage collection.</p>
+<p>Cluster-scoped resources are the exception. A namespace-scoped object cannot own a cluster-scoped one, so those are owned by the <code>Template</code> instead. A <code>ClusterRole</code> created through a <code>TemplateInstance</code> therefore outlives the instance and is removed only when the template is deleted.</p>
+<h2 id="status">Status<a class="headerlink" href="#status" title="Permanent link">#</a></h2>
+<p><code>status.status</code> reports <code>Deployed</code>, <code>Failed</code>, or an empty value while the instance is still pending. On failure, <code>status.reason</code> carries a short CamelCase code and <code>status.message</code> the detail.</p>
+<p>The remaining fields are working state rather than something to act on. <code>templateHash</code> and <code>templateManifests</code> record what was last rendered, which is how the controller ignores template updates that change nothing. <code>mappedSecrets</code> and <code>mappedConfigmaps</code> track each copied resource separately, so one failed mapping is visible without obscuring the others.</p>
+<h2 id="common-failures">Common failures<a class="headerlink" href="#common-failures" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th><code>reason</code></th>
+<th>Cause</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>TemplateNotFound</code></td>
+<td><code>spec.template</code> names a template that does not exist</td>
+</tr>
+<tr>
+<td><code>ErrorReplaceParameters</code></td>
+<td>A parameter could not be resolved, or a value failed the template's <code>validation</code> pattern</td>
+</tr>
+<tr>
+<td><code>ErrorRenderingGoTemplate</code></td>
+<td>The <code>gotemplate</code> body failed to execute</td>
+</tr>
+<tr>
+<td><code>ErrorParsingGoTemplate</code></td>
+<td>The template rendered, but the output was not valid Kubernetes YAML</td>
+</tr>
+<tr>
+<td><code>ErrorMappingResources</code></td>
+<td>A Secret or ConfigMap named in <code>resourceMappings</code> could not be read or copied</td>
+</tr>
+</tbody>
+</table>
+<p>Two related errors surface at admission time rather than in status, because the webhook rejects the request outright: referencing a template that does not exist when creating or updating an instance, and deleting a <code>Template</code> while any instance still references it.</p>
+<h2 id="related-guides">Related guides<a class="headerlink" href="#related-guides" title="Permanent link">#</a></h2>
+<ul>
+<li><a href="../../guides/templates/deploying-templates.html">Distributing Resources in Namespaces</a></li>
+<li><a href="../../guides/templates/copying-resources-2.html">Copying Secrets and ConfigMaps across Tenant Namespaces via TGI</a></li>
+</ul>
 
 
 
@@ -3459,27 +3685,27 @@ This documentation is for a pull request deployment and is unreleased, it is onl
                 <div class="flex-2">
                     <div class="logo-footer-container">
                         
-                        <img class="md-header__logo_light" src="assets/images/footer-logo-light.png#only-light" alt="logo">
+                        <img class="md-header__logo_light" src="../../assets/images/footer-logo-light.png#only-light" alt="logo">
                         
                         
-                        <img src="assets/images/footer-logo-dark.png#only-dark" alt="logo">
+                        <img src="../../assets/images/footer-logo-dark.png#only-dark" alt="logo">
                         
                     </div>
 
                     <div class="collaborations-img-container">
                         <div class="display-flex">
                             
-                            <img class="csa-logo-dark" src="assets/images/CSA_dark.png#only-dark" alt="CSA">
+                            <img class="csa-logo-dark" src="../../assets/images/CSA_dark.png#only-dark" alt="CSA">
                             
                             
-                            <img class="csa-logo-light" src="assets/images/CSA_light.png#only-light" alt="CSA">
+                            <img class="csa-logo-light" src="../../assets/images/CSA_light.png#only-light" alt="CSA">
                             
 
                             
-                            <img class="hc-logo-dark" src="assets/images/HC_dark.png#only-dark" alt="HC">
+                            <img class="hc-logo-dark" src="../../assets/images/HC_dark.png#only-dark" alt="HC">
                             
                             
-                            <img class="hc-logo-light" src="assets/images/HC_light.png#only-light" alt="HC">
+                            <img class="hc-logo-light" src="../../assets/images/HC_light.png#only-light" alt="HC">
                             
                         </div>
                     </div>
@@ -3871,10 +4097,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["content.code.copy", "navigation.tracking", "toc.follow", "navigation.top"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "latest", "provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.tracking", "toc.follow", "navigation.top"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "latest", "provider": "mike"}}</script>
     
     
-      <script src="assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   
