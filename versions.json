@@ -2,9 +2,7 @@
   {
     "version": "SA-8972_removing-fields-documentation",
     "title": "SA-8972_removing-fields-documentation",
-    "aliases": [
-      "latest"
-    ]
+    "aliases": []
   },
   {
     "version": "renovate-0.1-stakater-vale-package-0.x",
@@ -39,7 +37,9 @@
   {
     "version": "renovate-main-stakater-vale-package-0.x",
     "title": "renovate-main-stakater-vale-package-0.x",
-    "aliases": []
+    "aliases": [
+      "latest"
+    ]
   },
   {
     "version": "renovate-main-stakater-.github-0.x",
