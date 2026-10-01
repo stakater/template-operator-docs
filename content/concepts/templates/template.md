@@ -220,6 +220,7 @@ This is needed for config files and scripts that use the same syntax for their o
 ## Related guides
 
 - [Distributing Resources in Namespaces](../../guides/templates/deploying-templates.md)
+- [Removing a Field from a Template](../../guides/templates/removing-fields.md)
 - [Using Templates with Default Parameters](../../guides/templates/template-default-params.md)
 - [Deploying Private Helm Chart to Multiple Namespaces](../../guides/templates/deploying-private-helm-charts.md)
 - [Distributing Secrets Using Sealed Secrets Template](../../guides/templates/distributing-secrets-using-sealed-secret-template.md)
