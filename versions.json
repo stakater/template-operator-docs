@@ -17,9 +17,7 @@
   {
     "version": "renovate-0.1-python-3.x",
     "title": "renovate-0.1-python-3.x",
-    "aliases": [
-      "latest"
-    ]
+    "aliases": []
   },
   {
     "version": "renovate-0.1-nginxinc-nginx-unprivileged-1.x",
@@ -54,7 +52,9 @@
   {
     "version": "renovate-main-playwright-monorepo",
     "title": "renovate-main-playwright-monorepo",
-    "aliases": []
+    "aliases": [
+      "latest"
+    ]
   },
   {
     "version": "renovate-main-node-24.x",
