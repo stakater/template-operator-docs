@@ -3004,10 +3004,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#lists-do-not-need-a-null" class="md-nav__link">
+  <a href="#lists" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Lists do not need a null
+        Lists
       
     </span>
   </a>
@@ -3313,10 +3313,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#lists-do-not-need-a-null" class="md-nav__link">
+  <a href="#lists" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Lists do not need a null
+        Lists
       
     </span>
   </a>
@@ -3378,6 +3378,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 
 <h1 id="removing-a-field-from-a-template">Removing a Field from a Template<a class="headerlink" href="#removing-a-field-from-a-template" title="Permanent link">#</a></h1>
 <p>Deleting a line from a template does not remove that field from the resources already deployed. The live resource keeps the value it was last given. To remove a field, set it to <code>null</code> and keep the line in place.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Two kinds of field are removed by deleting the line. The <code>data</code> keys of a ConfigMap or Secret, because the operator nulls any key that disappears from the template. And any field inside a list item, such as <code>env</code> or <code>resources</code> under <code>containers</code>, because the operator replaces the whole list. A <code>null</code> works in both places too.</p>
+</div>
 <h2 id="set-the-field-to-null">Set the field to null<a class="headerlink" href="#set-the-field-to-null" title="Permanent link">#</a></h2>
 <div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">templates.stakater.com/v1alpha1</span>
 <span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Template</span>
@@ -3422,16 +3426,21 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 <p class="admonition-title">Note</p>
 <p>Some fields are given a default once cleared, so the key may reappear as an empty value. A pod <code>securityContext</code> removed this way reads back as <code>{}</code>. The settings it held are gone.</p>
 </div>
-<h2 id="lists-do-not-need-a-null">Lists do not need a null<a class="headerlink" href="#lists-do-not-need-a-null" title="Permanent link">#</a></h2>
-<p>An entry is removed from a list by deleting it from the template:</p>
+<h2 id="lists">Lists<a class="headerlink" href="#lists" title="Permanent link">#</a></h2>
+<p>The operator replaces a whole list on every apply, so an entry is removed from a list by deleting it from the template:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">env</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">KEEP_ME</span>
 <span class="w">    </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">"a"</span>
 <span class="w">  </span><span class="c1"># DROP_ME deleted, no null needed</span>
 </code></pre></div>
-<p>Use <code>null</code> for object fields only.</p>
+<p>To remove a whole list, set the list field itself to <code>null</code>. Deleting the key only works for a list inside another list item, such as <code>env</code> under <code>containers</code>. For a list directly under a map, such as <code>tolerations</code> or <code>volumes</code>, a deleted key leaves the old list on the live resource.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">template</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">spec</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">tolerations</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
+</code></pre></div>
 <h2 id="apply-the-template-with-server-side-apply">Apply the template with server-side apply<a class="headerlink" href="#apply-the-template-with-server-side-apply" title="Permanent link">#</a></h2>
-<p>A <code>null</code> only works if it reaches the cluster. Client-side <code>kubectl apply</code> strips it, both when creating the template and on every later apply. The stored template then looks exactly like one with the line deleted, the field is never removed, and no error is reported.</p>
+<p>A <code>null</code> only works if it reaches the cluster. Client-side <code>kubectl apply</code> cannot add a <code>null</code> to the stored template: it strips the <code>null</code> when it creates the template and when it updates one. The stored template then looks exactly like one with the line deleted, the field is never removed, and no error is reported. A <code>null</code> already stored by one of the other commands survives later client-side applies.</p>
 <table>
 <thead>
 <tr>
@@ -3472,10 +3481,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ServerSideApply=true</span>
 </code></pre></div>
 <h2 id="the-instance-needs-sync-enabled">The instance needs sync enabled<a class="headerlink" href="#the-instance-needs-sync-enabled" title="Permanent link">#</a></h2>
-<p>Removing a field takes effect on the next apply, so set <code>sync: true</code> on the instance. With sync left off, the template is rendered once and never applied again, so a <code>null</code> added afterwards never reaches the deployed resources. See <a href="../../concepts/templates/template-instance.html#sync">Sync</a>.</p>
+<p>Removing a field takes effect on the next apply, so set <code>sync: true</code> on the TemplateInstance or ClusterTemplateInstance. With sync left off, the template is rendered once and never applied again, so a <code>null</code> added later never reaches the deployed resources. See <a href="../../concepts/templates/template-instance.html#sync">Sync</a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>A parameter cannot supply a <code>null</code>. Parameter values are always strings, so <code>runAsUser: ${UID}</code> with an empty value renders an empty string. Write the <code>null</code> literally in the manifest.</p>
+<p>A parameter can supply a <code>null</code>, but only in the <code>${{NAME}}</code> form, which parses its value as YAML. With <code>runAsUser: ${{UID}}</code>, an empty value, <code>null</code>, <code>~</code>, or a parameter left out of the instance with no default all remove the field, and the instance still reports <code>Deployed</code>. The plain <code>${NAME}</code> form always renders a string, so it cannot supply a <code>null</code>, and on a numeric field like <code>runAsUser</code> the instance reports <code>Failed</code>. See <a href="../../concepts/templates/template.html#strings-and-expressions">Strings and expressions</a>.</p>
 </div>
 <h2 id="related">Related<a class="headerlink" href="#related" title="Permanent link">#</a></h2>
 <ul>
