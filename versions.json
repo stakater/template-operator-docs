@@ -2,7 +2,9 @@
   {
     "version": "SA-8972_removing-fields-documentation",
     "title": "SA-8972_removing-fields-documentation",
-    "aliases": []
+    "aliases": [
+      "latest"
+    ]
   },
   {
     "version": "renovate-0.1-stakater-vale-package-0.x",
@@ -52,9 +54,7 @@
   {
     "version": "renovate-main-playwright-monorepo",
     "title": "renovate-main-playwright-monorepo",
-    "aliases": [
-      "latest"
-    ]
+    "aliases": []
   },
   {
     "version": "renovate-main-node-24.x",
