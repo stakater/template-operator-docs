@@ -2,6 +2,9 @@
 
 Deleting a line from a template does not remove that field from the resources already deployed. The live resource keeps the value it was last given. To remove a field, set it to `null` and keep the line in place.
 
+!!! note
+    Two kinds of field are removed by deleting the line. The `data` keys of a ConfigMap or Secret, because the operator nulls any key that disappears from the template. And any field inside a list item, such as `env` or `resources` under `containers`, because the operator replaces the whole list. A `null` works in both places too.
+
 ## Set the field to null
 
 ```yaml
@@ -55,9 +58,9 @@ spec:
 !!! note
     Some fields are given a default once cleared, so the key may reappear as an empty value. A pod `securityContext` removed this way reads back as `{}`. The settings it held are gone.
 
-## Lists do not need a null
+## Lists
 
-An entry is removed from a list by deleting it from the template:
+The operator replaces a whole list on every apply, so an entry is removed from a list by deleting it from the template:
 
 ```yaml
 env:
@@ -66,11 +69,18 @@ env:
   # DROP_ME deleted, no null needed
 ```
 
-Use `null` for object fields only.
+To remove a whole list, set the list field itself to `null`. Deleting the key only works for a list inside another list item, such as `env` under `containers`. For a list directly under a map, such as `tolerations` or `volumes`, a deleted key leaves the old list on the live resource.
+
+```yaml
+spec:
+  template:
+    spec:
+      tolerations: null
+```
 
 ## Apply the template with server-side apply
 
-A `null` only works if it reaches the cluster. Client-side `kubectl apply` strips it, both when creating the template and on every later apply. The stored template then looks exactly like one with the line deleted, the field is never removed, and no error is reported.
+A `null` only works if it reaches the cluster. Client-side `kubectl apply` cannot add a `null` to the stored template: it strips the `null` when it creates the template and when it updates one. The stored template then looks exactly like one with the line deleted, the field is never removed, and no error is reported. A `null` already stored by one of the other commands survives later client-side applies.
 
 | Command | Null reaches the cluster |
 | --- | --- |
@@ -101,10 +111,10 @@ spec:
 
 ## The instance needs sync enabled
 
-Removing a field takes effect on the next apply, so set `sync: true` on the instance. With sync left off, the template is rendered once and never applied again, so a `null` added afterwards never reaches the deployed resources. See [Sync](../../concepts/templates/template-instance.md#sync).
+Removing a field takes effect on the next apply, so set `sync: true` on the TemplateInstance or ClusterTemplateInstance. With sync left off, the template is rendered once and never applied again, so a `null` added later never reaches the deployed resources. See [Sync](../../concepts/templates/template-instance.md#sync).
 
 !!! note
-    A parameter cannot supply a `null`. Parameter values are always strings, so `runAsUser: ${UID}` with an empty value renders an empty string. Write the `null` literally in the manifest.
+    A parameter can supply a `null`, but only in the `${{NAME}}` form, which parses its value as YAML. With `runAsUser: ${{UID}}`, an empty value, `null`, `~`, or a parameter left out of the instance with no default all remove the field, and the instance still reports `Deployed`. The plain `${NAME}` form always renders a string, so it cannot supply a `null`, and on a numeric field like `runAsUser` the instance reports `Failed`. See [Strings and expressions](../../concepts/templates/template.md#strings-and-expressions).
 
 ## Related
 
