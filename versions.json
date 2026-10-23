@@ -17,9 +17,7 @@
   {
     "version": "renovate-0.1-python-3.x",
     "title": "renovate-0.1-python-3.x",
-    "aliases": [
-      "latest"
-    ]
+    "aliases": []
   },
   {
     "version": "renovate-0.1-nginxinc-nginx-unprivileged-1.x",
@@ -94,6 +92,8 @@
   {
     "version": "chore-bump-playwright",
     "title": "chore-bump-playwright",
-    "aliases": []
+    "aliases": [
+      "latest"
+    ]
   }
 ]
