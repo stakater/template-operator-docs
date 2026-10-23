@@ -95,10 +95,5 @@
     "version": "chore-regenerate-api-reference",
     "title": "chore-regenerate-api-reference",
     "aliases": []
-  },
-  {
-    "version": "chore-bump-playwright",
-    "title": "chore-bump-playwright",
-    "aliases": []
   }
 ]
