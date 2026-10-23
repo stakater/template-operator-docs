@@ -87,7 +87,9 @@
   {
     "version": "feat-docs-target",
     "title": "feat-docs-target",
-    "aliases": []
+    "aliases": [
+      "latest"
+    ]
   },
   {
     "version": "chore-regenerate-api-reference",
@@ -97,8 +99,6 @@
   {
     "version": "chore-bump-playwright",
     "title": "chore-bump-playwright",
-    "aliases": [
-      "latest"
-    ]
+    "aliases": []
   }
 ]
