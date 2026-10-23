@@ -87,11 +87,6 @@
     "aliases": []
   },
   {
-    "version": "feat-docs-target",
-    "title": "feat-docs-target",
-    "aliases": []
-  },
-  {
     "version": "chore-regenerate-api-reference",
     "title": "chore-regenerate-api-reference",
     "aliases": []
