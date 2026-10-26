@@ -82,11 +82,6 @@
     "aliases": []
   },
   {
-    "version": "fix-serialize-gh-pages-deploys",
-    "title": "fix-serialize-gh-pages-deploys",
-    "aliases": []
-  },
-  {
     "version": "feat-reorganize-docs",
     "title": "feat-reorganize-docs",
     "aliases": []
