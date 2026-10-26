@@ -90,5 +90,10 @@
     "version": "chore-regenerate-api-reference",
     "title": "chore-regenerate-api-reference",
     "aliases": []
+  },
+  {
+    "version": "backport-serialize-gh-pages-deploys-0.1",
+    "title": "backport-serialize-gh-pages-deploys-0.1",
+    "aliases": []
   }
 ]
