@@ -47,9 +47,7 @@
   {
     "version": "renovate-main-python-3.x",
     "title": "renovate-main-python-3.x",
-    "aliases": [
-      "latest"
-    ]
+    "aliases": []
   },
   {
     "version": "renovate-main-node-24.x-lockfile",
@@ -59,7 +57,9 @@
   {
     "version": "renovate-main-node-24.x",
     "title": "renovate-main-node-24.x",
-    "aliases": []
+    "aliases": [
+      "latest"
+    ]
   },
   {
     "version": "renovate-main-nginxinc-nginx-unprivileged-1.x",
