@@ -57,9 +57,7 @@
   {
     "version": "renovate-main-node-24.x",
     "title": "renovate-main-node-24.x",
-    "aliases": [
-      "latest"
-    ]
+    "aliases": []
   },
   {
     "version": "renovate-main-nginxinc-nginx-unprivileged-1.x",
@@ -84,7 +82,9 @@
   {
     "version": "fix-serialize-gh-pages-deploys",
     "title": "fix-serialize-gh-pages-deploys",
-    "aliases": []
+    "aliases": [
+      "latest"
+    ]
   },
   {
     "version": "feat-reorganize-docs",
