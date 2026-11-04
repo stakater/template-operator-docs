@@ -57,4 +57,7 @@ NAME             STATE    AGE
 docker-secret    Active   2m
 ```
 
+!!! note
+    Deleting a `data` key from this Template removes it from every deployed Secret on the next sync, because the operator nulls `data` keys that disappear from the Template. Any other field stays on the live Secret until it is set to `null`. See [Removing a Field from a Template](removing-fields.md).
+
 `ClusterTemplateInstance` can also target specific tenants or all tenant namespaces under a single YAML definition.
