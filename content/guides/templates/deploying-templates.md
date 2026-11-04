@@ -222,4 +222,4 @@ spec:
 
 ### Removing a field from a deployed Template
 
-Deleting a line from the Template does not remove that field from the resources it deployed. The live resource keeps the value it was last given. To remove a field, set it to `null` in the Template and keep `sync: true` on the instance. An empty value for a `${{NAME}}` parameter also renders a `null` and removes the field. See [Removing a Field from a Template](removing-fields.md).
+Deleting a line from the Template does not remove that field from the resources it deployed. The live resource keeps the value it was last given. To remove a field, set it to `null` in the Template, apply the Template with `kubectl apply --server-side` (client-side `kubectl apply` silently drops the `null`), and keep `sync: true` on the instance. An empty value for a `${{NAME}}` parameter also renders a `null` and removes the field. See [Removing a Field from a Template](removing-fields.md).
