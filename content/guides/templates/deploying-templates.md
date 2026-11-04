@@ -54,6 +54,9 @@ NAME             STATE    AGE
 docker-secret    Active   2m
 ```
 
+!!! note
+    Deleting a `data` key from this Template removes it from every deployed Secret on the next sync, because the operator nulls `data` keys that disappear from the Template. Any other field stays on the live Secret until it is set to `null`. See [Removing a Field from a Template](removing-fields.md).
+
 `ClusterTemplateInstance` can also target specific tenants or all tenant namespaces under a single YAML definition.
 
 ### ClusterTemplateInstance for multiple Tenants
@@ -216,3 +219,7 @@ spec:
     - name: DEFAULT_CPU_REQUESTS
       value: "1"
 ```
+
+### Removing a field from a deployed Template
+
+Deleting a line from the Template does not remove that field from the resources it deployed. The live resource keeps the value it was last given. To remove a field, set it to `null` in the Template, apply the Template with `kubectl apply --server-side` (client-side `kubectl apply` silently drops the `null`), and keep `sync: true` on the instance. An empty value for a `${{NAME}}` parameter also renders a `null` and removes the field. See [Removing a Field from a Template](removing-fields.md).

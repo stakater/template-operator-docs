@@ -32,3 +32,6 @@ resources:
 ```
 
 Parameters can be used with both `manifests` and `helm charts`
+
+!!! note
+    A parameter without a default `value` renders as empty when the instance leaves it out. In the `${{NAME}}` form that empty value is a `null`, and the operator removes the field from the deployed resource with no error. A default `value` prevents this. So does `required: true` with a `validation` pattern that rejects an empty string. See [Removing a Field from a Template](removing-fields.md).

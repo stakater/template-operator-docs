@@ -69,6 +69,7 @@ nav:
           - guides/templates/deploying-private-helm-charts.md
           - guides/templates/template-default-params.md
           - guides/templates/resource-sync-by-tgi.md
+          - guides/templates/removing-fields.md
   - Reference:
       - reference/api.md
       - reference/metrics.md
