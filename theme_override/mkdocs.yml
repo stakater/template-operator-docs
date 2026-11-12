@@ -21,6 +21,7 @@ extra:
 plugins:
   - redirects:
       redirect_maps:
+        index.md: overview/introduction.md
         about/key-features.md: overview/key-features.md
         about/benefits.md: overview/use-cases.md
         architecture/architecture.md: concepts/architecture.md
@@ -44,7 +45,7 @@ plugins:
 
 nav:
   - Overview:
-      - index.md
+      - Introduction: overview/introduction.md
       - overview/key-features.md
       - overview/use-cases.md
   - Concepts:
