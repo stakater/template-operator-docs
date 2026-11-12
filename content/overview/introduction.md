@@ -5,7 +5,7 @@ head:
       content: template operator, kubernetes, multi-tenancy, templates
 ---
 
-# Welcome to the Docs
+# Introduction
 
 Managing Kubernetes clusters can be complex, requiring careful orchestration of resources, security, and automation. While Kubernetes provides foundational building blocks, achieving secure, scalable, and efficient multi-tenancy often demands advanced expertise and custom solutions.
 
@@ -19,7 +19,3 @@ Managing Kubernetes clusters can be complex, requiring careful orchestration of 
 - **Achieve multi-tenancy** without additional management layers.
 
 Template Operator simplifies cluster administration, enhances security, and enables efficient resource utilization, making multi-tenancy accessible and manageable for organizations of all sizes.
-
-## Installation
-
-Refer to the [installation guide](./getting-started/installation/overview.md) for setting up Template Operator.
