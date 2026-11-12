@@ -85,13 +85,6 @@
     "aliases": []
   },
   {
-    "version": "docs-welcome-page",
-    "title": "docs-welcome-page",
-    "aliases": [
-      "latest"
-    ]
-  },
-  {
     "version": "chore-regenerate-api-reference",
     "title": "chore-regenerate-api-reference",
     "aliases": []
